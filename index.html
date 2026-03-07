@@ -34,6 +34,9 @@
 
     /* Hero */
     #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 80px; }
+    .hero-content { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .hero-text { flex: 1; min-width: 280px; }
+    .hero-photo { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(124,106,247,0.4); flex-shrink: 0; }
     .tag {
       display: inline-block; font-size: 0.7rem; color: var(--accent-light);
       background: rgba(124,106,247,0.1); border: 1px solid rgba(124,106,247,0.25);
@@ -95,6 +98,8 @@
     .exp-bullets li { font-size: 0.84rem; color: var(--muted); line-height: 1.65; padding-left: 1rem; position: relative; }
     .exp-bullets li::before { content: "–"; position: absolute; left: 0; color: var(--accent-light); }
 
+    .exp-para { font-size: 0.84rem; color: var(--muted); line-height: 1.75; }
+
     /* Skills */
     .skills-group + .skills-group { margin-top: 1.75rem; }
     .skills-group-title { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); margin-bottom: 0.65rem; }
@@ -153,6 +158,7 @@
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#writing">Writing</a></li>
+    <li><a href="#achievements">Achievements</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -160,6 +166,8 @@
 
 <!-- Hero -->
 <section id="hero">
+<div class="hero-content">
+  <div class="hero-text">
   <span class="tag">Open to opportunities</span>
   <h1>Hi, I'm <span>Tulika Das</span></h1>
   <p class="hero-bio">AI Engineer focused on building intelligent systems with LLMs, RAG pipelines, and autonomous agents — turning research into real, working tools.</p>
@@ -168,6 +176,9 @@
     <a href="https://github.com/tulika105" target="_blank" class="btn btn-ghost">GitHub</a>
     <a href="https://www.linkedin.com/in/tulika-das-7746aa291/" target="_blank" class="btn btn-ghost">LinkedIn</a>
   </div>
+  </div>
+  <img src="https://avatars.githubusercontent.com/u/159255355?v=4" alt="Tulika Das" class="hero-photo">
+</div>
 </section>
 
 <hr class="divider">
@@ -198,10 +209,7 @@
         </div>
         <span class="exp-date">Oct 2025 – Feb 2026</span>
       </div>
-      <ul class="exp-bullets">
-        <li>Built and optimized LLM prompt pipelines and multilingual Voice AI systems for healthcare workflows, improving response relevance by 25–30% and cutting demo setup time by 40%.</li>
-        <li>Designed a multi-agent orchestration MVP using LangGraph for hospital triage, and reduced RAG token wastage by introducing a lightweight query classification layer — improving latency by 40–50%.</li>
-      </ul>
+      <p class="exp-para">Built and optimized LLM prompt pipelines and multilingual Voice AI systems for healthcare workflows, improving response relevance by 25–30% and cutting demo setup time by 40%. Designed a multi-agent orchestration MVP using LangGraph for hospital triage with emergency-priority routing, structured state transitions, and audit logging.</p>
     </div>
 
     <div class="exp-card">
@@ -212,10 +220,7 @@
         </div>
         <span class="exp-date">Jan 2025 – May 2025</span>
       </div>
-      <ul class="exp-bullets">
-        <li>Implemented LangChain and a custom prompt engineering framework (15+ templates) for Algoace, an AI-powered programming assessment platform built for 1,000+ students.</li>
-        <li>Built a pseudocode evaluation system with multi-metric scoring and an adaptive learning feature that delivers personalized resources based on student performance.</li>
-      </ul>
+      <p class="exp-para">Implemented LangChain and a custom prompt engineering framework with 15+ templates for Algoace, an AI-powered programming assessment platform built for 1,000+ students. Built a pseudocode evaluation system with multi-metric scoring and an adaptive learning feature that delivers personalized resources based on student performance.</p>
     </div>
 
   </div>
@@ -293,6 +298,26 @@
       <p class="project-desc">Enhancing industrial casting quality using CNN-based visual defect detection systems.</p>
       <div class="project-tags"><span class="pill">CNN</span><span class="pill">Computer Vision</span><span class="pill">Ready Tensor</span></div>
     </a>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Achievements -->
+<section id="achievements">
+  <p class="section-label">Recognition</p>
+  <h2>Achievements</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-top">
+        <span class="project-name">🏆 Distinguished Social Impact Innovation</span>
+        <span class="exp-date">2025</span>
+      </div>
+      <p class="project-desc">Won at the <strong style="color:var(--text)">Agentic AI Innovation Challenge 2025</strong> on Ready Tensor for SheGuard — an AI-powered personal safety advisor for women, built with LLaMA 3.3-70b, LangChain, and deployed on Hugging Face Spaces.</p>
+      <div class="project-tags"><span class="pill">LLaMA</span><span class="pill">LangChain</span><span class="pill">Gradio</span><span class="pill">Ready Tensor</span></div>
+    </div>
 
   </div>
 </section>
