@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tulika Das — AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0f; --surface: #111118; --border: #1e1e2e;
+      --accent: #7c6af7; --accent-light: #a89cf7;
+      --text: #e2e2e8; --muted: #888895;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; }
+
+    /* Nav */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.88); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-weight: 600; font-size: 0.95rem; letter-spacing: -0.01em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+
+    /* Sections */
+    section { max-width: 760px; margin: 0 auto; padding: 5rem 2rem; }
+
+    /* Hero */
+    #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 80px; }
+    .tag {
+      display: inline-block; font-size: 0.7rem; color: var(--accent-light);
+      background: rgba(124,106,247,0.1); border: 1px solid rgba(124,106,247,0.25);
+      border-radius: 999px; padding: 0.25rem 0.8rem; margin-bottom: 1.5rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    h1 { font-size: clamp(2.4rem, 6vw, 3.8rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.25rem; }
+    h1 span { color: var(--accent-light); }
+    .hero-bio { font-size: 1.1rem; color: var(--muted); max-width: 520px; margin-bottom: 2rem; }
+    .hero-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      padding: 0.55rem 1.2rem; border-radius: 8px; font-size: 0.85rem;
+      font-weight: 500; text-decoration: none; transition: all 0.2s; cursor: pointer;
+    }
+    .btn-primary { background: var(--accent); color: #fff; border: 1px solid var(--accent); }
+    .btn-primary:hover { background: var(--accent-light); border-color: var(--accent-light); }
+    .btn-ghost { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+    .btn-ghost:hover { color: var(--text); border-color: #3a3a4a; }
+
+    /* Section headers */
+    .section-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-light); margin-bottom: 0.6rem; }
+    h2 { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 2.25rem; }
+
+    /* About */
+    .about-text { color: var(--muted); line-height: 1.85; }
+    .about-text p + p { margin-top: 1rem; }
+    .about-text a { color: var(--accent-light); text-decoration: none; }
+    .about-text a:hover { text-decoration: underline; }
+
+    /* Projects */
+    .projects-grid { display: grid; gap: 0.875rem; }
+    .project-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.4rem; transition: border-color 0.2s, transform 0.2s;
+      text-decoration: none; color: inherit; display: block;
+    }
+    .project-card:hover { border-color: rgba(124,106,247,0.45); transform: translateY(-2px); }
+    .project-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 0.45rem; }
+    .project-name { font-weight: 600; font-size: 0.975rem; color: var(--text); }
+    .project-arrow { color: var(--muted); font-size: 1rem; transition: color 0.2s; }
+    .project-card:hover .project-arrow { color: var(--accent-light); }
+    .project-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .pill {
+      font-size: 0.68rem; padding: 0.18rem 0.6rem; border-radius: 999px;
+      background: rgba(124,106,247,0.07); color: var(--accent-light);
+      border: 1px solid rgba(124,106,247,0.18);
+    }
+
+    /* Experience */
+    .exp-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .exp-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
+    .exp-role { font-weight: 600; font-size: 0.975rem; color: var(--text); }
+    .exp-company { font-size: 0.82rem; color: var(--accent-light); margin-top: 0.2rem; }
+    .exp-date { font-size: 0.75rem; color: var(--muted); background: rgba(124,106,247,0.07); border: 1px solid rgba(124,106,247,0.18); padding: 0.2rem 0.7rem; border-radius: 999px; white-space: nowrap; }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .exp-bullets li { font-size: 0.84rem; color: var(--muted); line-height: 1.65; padding-left: 1rem; position: relative; }
+    .exp-bullets li::before { content: "–"; position: absolute; left: 0; color: var(--accent-light); }
+
+    /* Skills */
+    .skills-group + .skills-group { margin-top: 1.75rem; }
+    .skills-group-title { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); margin-bottom: 0.65rem; }
+    .skills-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-chip {
+      font-size: 0.8rem; padding: 0.3rem 0.8rem; border-radius: 8px;
+      background: var(--surface); color: var(--text); border: 1px solid var(--border);
+    }
+
+    /* Contact */
+    .contact-links { display: flex; flex-direction: column; gap: 0.65rem; }
+    .contact-link {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 0.9rem 1.2rem; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 10px;
+      text-decoration: none; transition: border-color 0.2s;
+    }
+    .contact-link:hover { border-color: rgba(124,106,247,0.4); }
+    .contact-label { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.1rem; }
+    .contact-value { font-size: 0.875rem; color: var(--text); }
+
+    /* Contact form */
+    .contact-top { margin-bottom: 1.5rem; }
+    .contact-form-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+    .contact-form-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 1.25rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.875rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.875rem; }
+    .form-group label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .form-group input, .form-group textarea {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+      padding: 0.6rem 0.9rem; color: var(--text); font-size: 0.875rem;
+      font-family: inherit; outline: none; resize: none; transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color: rgba(124,106,247,0.5); }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: #444455; }
+    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+
+    /* Divider & Footer */
+    .divider { border: none; border-top: 1px solid var(--border); }
+    footer { border-top: 1px solid var(--border); text-align: center; padding: 1.75rem 2rem; font-size: 0.78rem; color: var(--muted); }
+    footer a { color: var(--muted); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1.25rem; }
+      .nav-links { gap: 1.25rem; }
+      section { padding: 4rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">Tulika Das</span>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section id="hero">
+  <span class="tag">Open to opportunities</span>
+  <h1>Hi, I'm <span>Tulika Das</span></h1>
+  <p class="hero-bio">AI Engineer focused on building intelligent systems with LLMs, RAG pipelines, and autonomous agents — turning research into real, working tools.</p>
+  <div class="hero-links">
+    <a href="#projects" class="btn btn-primary">View Projects →</a>
+    <a href="https://github.com/tulika105" target="_blank" class="btn btn-ghost">GitHub</a>
+    <a href="https://www.linkedin.com/in/tulika-das-7746aa291/" target="_blank" class="btn btn-ghost">LinkedIn</a>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- About -->
+<section id="about">
+  <p class="section-label">About</p>
+  <h2>Who I am</h2>
+  <div class="about-text">
+    <p>I'm Tulika Das, an aspiring AI Engineer based in India with a deep focus on large language models, retrieval-augmented generation, and agentic AI systems. I enjoy the full arc of building — from designing pipelines and evaluating models to shipping clean, working code.</p>
+    <p>My recent work spans scalable LLM backends, memory-based agents, hybrid RAG systems, and AI safety tools. I care about building things that are not just technically interesting but genuinely useful.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Experience -->
+<section id="experience">
+  <p class="section-label">Experience</p>
+  <h2>Work Experience</h2>
+  <div class="exp-list">
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <p class="exp-role">AI Engineer Intern</p>
+          <p class="exp-company">Tulu Health — Delhi</p>
+        </div>
+        <span class="exp-date">Oct 2025 – Feb 2026</span>
+      </div>
+      <ul class="exp-bullets">
+        <li>Built and optimized LLM prompt pipelines and multilingual Voice AI systems for healthcare workflows, improving response relevance by 25–30% and cutting demo setup time by 40%.</li>
+        <li>Designed a multi-agent orchestration MVP using LangGraph for hospital triage, and reduced RAG token wastage by introducing a lightweight query classification layer — improving latency by 40–50%.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <p class="exp-role">AI Intern</p>
+          <p class="exp-company">Neuro Web Solutions — Rajkot</p>
+        </div>
+        <span class="exp-date">Jan 2025 – May 2025</span>
+      </div>
+      <ul class="exp-bullets">
+        <li>Implemented LangChain and a custom prompt engineering framework (15+ templates) for Algoace, an AI-powered programming assessment platform built for 1,000+ students.</li>
+        <li>Built a pseudocode evaluation system with multi-metric scoring and an adaptive learning feature that delivers personalized resources based on student performance.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Projects -->
+<section id="projects">
+  <p class="section-label">Work</p>
+  <h2>Featured Projects</h2>
+  <div class="projects-grid">
+
+    <a href="https://github.com/tulika105/LLM-System-Design" target="_blank" class="project-card">
+      <div class="project-top"><span class="project-name">LLM System Design</span><span class="project-arrow">↗</span></div>
+      <p class="project-desc">Scalable LLM backend with authentication, rate limiting, cost accounting, and fallback logic built on FastAPI.</p>
+      <div class="project-tags"><span class="pill">FastAPI</span><span class="pill">LLM</span><span class="pill">Python</span><span class="pill">System Design</span></div>
+    </a>
+
+    <a href="https://github.com/tulika105/Daily-News-AI-Agent" target="_blank" class="project-card">
+      <div class="project-top"><span class="project-name">Daily News AI Agent</span><span class="project-arrow">↗</span></div>
+      <p class="project-desc">Autonomous agent that fetches global news, summarizes articles using LLaMA, and delivers a daily email digest.</p>
+      <div class="project-tags"><span class="pill">AI Agent</span><span class="pill">LLaMA</span><span class="pill">Python</span><span class="pill">Automation</span></div>
+    </a>
+
+    <a href="https://github.com/tulika105/Memory-AI-Agent" target="_blank" class="project-card">
+      <div class="project-top"><span class="project-name">Memory AI Agent</span><span class="project-arrow">↗</span></div>
+      <p class="project-desc">Memory-based agent with short-term conversational context and long-term JSON-based persistent memory using LangChain.</p>
+      <div class="project-tags"><span class="pill">LangChain</span><span class="pill">Memory</span><span class="pill">AI Agent</span><span class="pill">Python</span></div>
+    </a>
+
+    <a href="https://github.com/tulika105/Hybrid-RAG-Pipeline" target="_blank" class="project-card">
+      <div class="project-top"><span class="project-name">Hybrid RAG Pipeline</span><span class="project-arrow">↗</span></div>
+      <p class="project-desc">RAG pipeline combining dense semantic search and sparse keyword search for health-domain Q&A on heart disease prevention.</p>
+      <div class="project-tags"><span class="pill">RAG</span><span class="pill">Faiss</span><span class="pill">Transformers</span><span class="pill">Python</span></div>
+    </a>
+
+    <a href="https://github.com/tulika105/SheGuard-AI" target="_blank" class="project-card">
+      <div class="project-top"><span class="project-name">SheGuard AI</span><span class="project-arrow">↗</span></div>
+      <p class="project-desc">AI-driven personal safety advisor for women, powered by Llama-3.3-70b, providing personalized guidance across age groups.</p>
+      <div class="project-tags"><span class="pill">LLaMA</span><span class="pill">Safety AI</span><span class="pill">Python</span></div>
+    </a>
+
+    <a href="https://github.com/tulika105/Evaluating-RAG-with-RAGAS" target="_blank" class="project-card">
+      <div class="project-top"><span class="project-name">RAG Evaluation with RAGAS</span><span class="project-arrow">↗</span></div>
+      <p class="project-desc">Component-level RAG evaluation using the RAGAS framework — measuring faithfulness, answer relevancy, and context precision.</p>
+      <div class="project-tags"><span class="pill">RAG</span><span class="pill">RAGAS</span><span class="pill">Evaluation</span><span class="pill">Jupyter</span></div>
+    </a>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Writing -->
+<section id="writing">
+  <p class="section-label">Writing</p>
+  <h2>Publications</h2>
+  <div class="projects-grid">
+
+    <a href="https://app.readytensor.ai/publications/csvpal-a-rag-driven-assistant-for-csv-analysis-with-automatic-python-code-generation-N3ELRq99PqoN" target="_blank" class="project-card">
+      <div class="project-top"><span class="project-name">CsvPal — RAG-Driven CSV Analysis Assistant</span><span class="project-arrow">↗</span></div>
+      <p class="project-desc">A RAG-driven assistant for CSV analysis with automatic Python code generation.</p>
+      <div class="project-tags"><span class="pill">RAG</span><span class="pill">LLM</span><span class="pill">Code Generation</span><span class="pill">Ready Tensor</span></div>
+    </a>
+
+    <a href="https://app.readytensor.ai/publications/sheguard-an-ai-powered-personal-safety-advisor-for-women-of-all-ages-nIHwyQJQ7bIR" target="_blank" class="project-card">
+      <div class="project-top"><span class="project-name">SheGuard — AI-Powered Personal Safety Advisor</span><span class="project-arrow">↗</span></div>
+      <p class="project-desc">An AI-driven personal safety advisor for women of all ages, powered by Llama-3.3-70b.</p>
+      <div class="project-tags"><span class="pill">LLaMA</span><span class="pill">Safety AI</span><span class="pill">Ready Tensor</span></div>
+    </a>
+
+    <a href="https://app.readytensor.ai/publications/enhancing-casting-quality-with-cnn-based-defect-detection-systems-Sbzl6hxMlFOp" target="_blank" class="project-card">
+      <div class="project-top"><span class="project-name">CNN-Based Defect Detection for Casting Quality</span><span class="project-arrow">↗</span></div>
+      <p class="project-desc">Enhancing industrial casting quality using CNN-based visual defect detection systems.</p>
+      <div class="project-tags"><span class="pill">CNN</span><span class="pill">Computer Vision</span><span class="pill">Ready Tensor</span></div>
+    </a>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Skills -->
+<section id="skills">
+  <p class="section-label">Skills</p>
+  <h2>What I work with</h2>
+  <div class="skills-group">
+    <p class="skills-group-title">Languages & Data</p>
+    <div class="skills-list">
+      <span class="skill-chip">Python</span><span class="skill-chip">Pandas</span><span class="skill-chip">NumPy</span><span class="skill-chip">Matplotlib</span>
+    </div>
+  </div>
+  <div class="skills-group">
+    <p class="skills-group-title">Machine Learning</p>
+    <div class="skills-list">
+      <span class="skill-chip">Scikit-learn</span><span class="skill-chip">TensorFlow</span>
+      <span class="skill-chip">NLP</span><span class="skill-chip">Model Evaluation</span>
+    </div>
+  </div>
+  <div class="skills-group">
+    <p class="skills-group-title">LLMs & GenAI</p>
+    <div class="skills-list">
+      <span class="skill-chip">Prompt Engineering</span><span class="skill-chip">RAG</span><span class="skill-chip">LangChain</span>
+      <span class="skill-chip">LangGraph</span><span class="skill-chip">HuggingFace</span>
+      <span class="skill-chip">Faiss</span><span class="skill-chip">ChromaDB</span><span class="skill-chip">RAGAS</span>
+    </div>
+  </div>
+  <div class="skills-group">
+    <p class="skills-group-title">Dev & Deployment</p>
+    <div class="skills-list">
+      <span class="skill-chip">FastAPI</span><span class="skill-chip">Streamlit</span><span class="skill-chip">Gradio</span>
+      <span class="skill-chip">Git</span><span class="skill-chip">GitHub</span><span class="skill-chip">REST APIs</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Contact -->
+<section id="contact">
+  <p class="section-label">Contact</p>
+  <h2>Let's connect</h2>
+  <div class="contact-top">
+    <a href="mailto:tulika.das105@gmail.com" class="contact-link">
+      <div><p class="contact-label">Email</p><p class="contact-value">tulika.das105@gmail.com</p></div>
+    </a>
+  </div>
+
+  <div class="contact-form-wrap">
+    <p class="contact-form-title">Send a message</p>
+    <form action="https://formspree.io/f/xyknyvob" method="POST" class="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="What's on your mind?" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send Message →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>Built by <a href="https://github.com/tulika105">Tulika Das</a> · tulika105.github.io</p>
+</footer>
+
+</body>
+</html>
