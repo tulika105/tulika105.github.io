@@ -68,7 +68,8 @@
     .about-text a:hover { text-decoration: underline; }
 
     /* Projects */
-    .projects-grid { display: grid; gap: 0.875rem; }
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.875rem; }
+    @media (max-width: 600px) { .projects-grid { grid-template-columns: 1fr; } }
     .project-card {
       background: var(--surface); border: 1px solid var(--border);
       border-radius: 12px; padding: 1.4rem; transition: border-color 0.2s, transform 0.2s;
@@ -88,7 +89,8 @@
       border: 1px solid rgba(124,106,247,0.18);
     }
 
-    /* Experience */
+    .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    @media (max-width: 600px) { .skills-grid { grid-template-columns: 1fr; } }
     .exp-list { display: flex; flex-direction: column; gap: 1.5rem; }
     .exp-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
     .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
@@ -155,6 +157,7 @@
   <nav>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#writing">Writing</a></li>
@@ -188,8 +191,39 @@
   <p class="section-label">About</p>
   <h2>About Me</h2>
   <div class="about-text">
-    <p>I'm Tulika Das, an aspiring AI Engineer based in India with a deep focus on large language models, retrieval-augmented generation, and agentic AI systems. I enjoy the full arc of building — from designing pipelines and evaluating models to shipping clean, working code.</p>
+    <p>An aspiring AI Engineer based in India with a deep focus on large language models, retrieval-augmented generation, and agentic AI systems. I enjoy the full arc of building — from designing pipelines and evaluating models to shipping clean, working code.</p>
     <p>My recent work spans scalable LLM backends, memory-based agents, hybrid RAG systems, and AI safety tools. I care about building things that are not just technically interesting but genuinely useful.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Education -->
+<section id="education">
+  <p class="section-label">Education</p>
+  <h2>Academic Background</h2>
+  <div class="exp-list">
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <p class="exp-role">MSc in Data Science</p>
+          <p class="exp-company">Vellore Institute of Technology, Amaravati</p>
+        </div>
+        <span class="exp-date">Sept 2023 – June 2025</span>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <p class="exp-role">BSc in Mathematics</p>
+          <p class="exp-company">Ispat Autonomous College, Rourkela</p>
+        </div>
+        <span class="exp-date">Aug 2019 – July 2022</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -334,7 +368,7 @@
 <section id="skills">
   <p class="section-label">Skills</p>
   <h2>What I work with</h2>
-  <div class="skills-group">
+  <div class="skills-grid">
     <p class="skills-group-title">Languages & Data</p>
     <div class="skills-list">
       <span class="skill-chip">Python</span><span class="skill-chip">Pandas</span><span class="skill-chip">NumPy</span><span class="skill-chip">Matplotlib</span>
@@ -363,10 +397,6 @@
     </div>
   </div>
 </section>
-
-<hr class="divider">
-
-<!-- Contact -->
 <section id="contact">
   <p class="section-label">Contact</p>
   <h2>Let's connect</h2>
