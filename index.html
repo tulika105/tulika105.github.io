@@ -89,7 +89,6 @@
       background: rgba(124,106,247,0.07); color: var(--accent-light);
       border: 1px solid rgba(124,106,247,0.18);
     }
-
     .project-result {
       display: flex; align-items: baseline; gap: 0.5rem;
       margin-top: 0.9rem; margin-bottom: 0.9rem;
@@ -98,10 +97,7 @@
       border-left: 3px solid var(--accent);
       border-radius: 0 6px 6px 0;
     }
-    .project-result-label {
-      font-size: 0.63rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.08em; color: var(--accent-light); white-space: nowrap; flex-shrink: 0;
-    }
+    .project-result-label { font-size: 0.63rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-light); white-space: nowrap; flex-shrink: 0; }
     .project-result-text { font-size: 0.82rem; color: var(--text); line-height: 1.5; }
 
     .skills-grid { display: flex; flex-direction: column; gap: 2.25rem; }
@@ -158,8 +154,7 @@
       <h1>Hi, I'm <span>Tulika Das</span></h1>
       <p class="hero-bio">Building intelligent systems with LLMs, RAG pipelines, and autonomous agents — turning research into real, working tools.</p>
       <div class="hero-links">
-        <a href="https://youtu.be/mx-YdV_Srk8?si=ssalfxFtIFHUjsZv" target="_blank" class="btn btn-primary">&#9654; Quick Intro (1 min)</a>
-        <a href="#projects" class="btn btn-ghost">View Projects</a>
+        <a href="#projects" class="btn btn-primary">View Projects →</a>
         <a href="https://github.com/tulika105" target="_blank" class="btn btn-ghost">GitHub</a>
         <a href="https://www.linkedin.com/in/tulika-das-7746aa291/" target="_blank" class="btn btn-ghost">LinkedIn</a>
       </div>
@@ -187,7 +182,6 @@
   <p class="section-label">Experience</p>
   <h2>Work Experience</h2>
   <div class="exp-list">
-
     <div class="exp-card">
       <div class="exp-header">
         <div>
@@ -198,7 +192,6 @@
       </div>
       <p class="exp-para">Built and optimized LLM prompt pipelines and multilingual Voice AI systems for healthcare workflows, improving response relevance by 25–30% and cutting demo setup time by 40%. Designed a multi-agent orchestration MVP using LangGraph for hospital triage with emergency-priority routing, structured state transitions, and audit logging.</p>
     </div>
-
     <div class="exp-card">
       <div class="exp-header">
         <div>
@@ -209,7 +202,6 @@
       </div>
       <p class="exp-para">Implemented LangChain and a custom prompt engineering framework with 15+ templates for Algoace, an AI-powered programming assessment platform built for 1,000+ students. Built a pseudocode evaluation system with multi-metric scoring and an adaptive learning feature that delivers personalized resources based on student performance.</p>
     </div>
-
   </div>
 </section>
 
@@ -220,7 +212,6 @@
   <p class="section-label">Education</p>
   <h2>Academic Background</h2>
   <div class="exp-list">
-
     <div class="exp-card">
       <div class="exp-header">
         <div>
@@ -230,7 +221,6 @@
         <span class="exp-date">Sept 2023 – June 2025</span>
       </div>
     </div>
-
     <div class="exp-card">
       <div class="exp-header">
         <div>
@@ -240,7 +230,6 @@
         <span class="exp-date">Aug 2019 – July 2022</span>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -252,84 +241,49 @@
   <h2>Featured Projects</h2>
   <div class="projects-grid">
 
-    <!-- Multi-Agent Complaint System -->
     <a href="https://github.com/tulika105/Multi-Agent-Complaint-System" target="_blank" class="project-card fade-in">
       <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?w=800&q=80" alt="Multi-Agent Complaint System" class="project-thumb">
-      <div class="project-top"><span class="project-name">Multi-Agent Complaint System</span><span class="project-arrow">&#8599;</span></div>
-      <p class="project-desc">
-        <strong style="color:var(--text)">Problem:</strong> Customer support teams struggle with high complaint volumes, mixing urgent issues with trivial queries and causing missed escalations.<br><br>
-        <strong style="color:var(--text)">Solution:</strong> Built a multi-agent system using LangGraph, Llama-3, and Gemini that auto-routes complaints by urgency, loops in human managers for high-severity cases, and sends automated email resolutions.
-      </p>
-      <div class="project-result">
-        <span class="project-result-label">Result</span>
-        <span class="project-result-text">Critical complaints reach managers automatically, with no manual sorting needed.</span>
-      </div>
+      <div class="project-top"><span class="project-name">Multi-Agent Complaint System</span><span class="project-arrow">↗</span></div>
+      <p class="project-desc"><strong style="color:var(--text)">Problem:</strong> Customer support teams struggle with high complaint volumes, mixing urgent issues with trivial queries and causing missed escalations.<br><br><strong style="color:var(--text)">Solution:</strong> Built a multi-agent system using LangGraph, Llama-3, and Gemini that auto-routes complaints by urgency, loops in human managers for high-severity cases, and sends automated email resolutions.</p>
+      <div class="project-result"><span class="project-result-label">Result</span><span class="project-result-text">Critical complaints reach managers automatically, with no manual sorting needed.</span></div>
       <div class="project-tags"><span class="pill">LangGraph</span><span class="pill">LLaMA-3</span><span class="pill">Gemini</span><span class="pill">HITL</span><span class="pill">Python</span></div>
-      <a href="https://youtu.be/CYjLIDAvzF0" target="_blank" onclick="event.stopPropagation()" class="btn btn-primary" style="margin-top:0.85rem;font-size:0.78rem;display:inline-flex;">&#9654; See It in Action</a>
+      <a href="https://youtu.be/CYjLIDAvzF0" target="_blank" onclick="event.stopPropagation()" class="btn btn-primary" style="margin-top:0.85rem;font-size:0.78rem;display:inline-flex;">▶ See It in Action</a>
     </a>
 
-    <!-- Research Agent -->
     <a href="https://github.com/tulika105/Research-Agent" target="_blank" class="project-card fade-in">
       <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80" alt="Research Agent" class="project-thumb">
-      <div class="project-top"><span class="project-name">Autonomous Research Agent (ReAct-based)</span><span class="project-arrow">&#8599;</span></div>
-      <p class="project-desc">
-        <strong style="color:var(--text)">Problem:</strong> Manual research is slow and fragmented, searching multiple queries, reading articles, and synthesizing findings takes hours.<br><br>
-        <strong style="color:var(--text)">Solution:</strong> Built a ReAct agent using LangGraph and Groq that autonomously searches DuckDuckGo across multiple angles and compiles findings into a structured 6-section research report from the CLI.
-      </p>
-      <div class="project-result">
-        <span class="project-result-label">Result</span>
-        <span class="project-result-text">One prompt produces a full, structured research report in seconds from the CLI.</span>
-      </div>
+      <div class="project-top"><span class="project-name">Autonomous Research Agent (ReAct-based)</span><span class="project-arrow">↗</span></div>
+      <p class="project-desc"><strong style="color:var(--text)">Problem:</strong> Manual research is slow and fragmented — searching multiple queries, reading articles, and synthesizing findings takes hours.<br><br><strong style="color:var(--text)">Solution:</strong> Built a ReAct agent using LangGraph and Groq that autonomously searches DuckDuckGo across multiple angles and compiles findings into a structured 6-section research report from the CLI.</p>
+      <div class="project-result"><span class="project-result-label">Result</span><span class="project-result-text">One prompt produces a full, structured research report in seconds from the CLI.</span></div>
       <div class="project-tags"><span class="pill">LangGraph</span><span class="pill">Groq</span><span class="pill">ReAct</span><span class="pill">Python</span></div>
-      <a href="https://youtu.be/Q5cAnqB865c" target="_blank" onclick="event.stopPropagation()" class="btn btn-primary" style="margin-top:0.85rem;font-size:0.78rem;display:inline-flex;">&#9654; See It in Action</a>
+      <a href="https://youtu.be/Q5cAnqB865c" target="_blank" onclick="event.stopPropagation()" class="btn btn-primary" style="margin-top:0.85rem;font-size:0.78rem;display:inline-flex;">▶ See It in Action</a>
     </a>
 
-    <!-- LLM System Design -->
     <a href="https://github.com/tulika105/LLM-System-Design" target="_blank" class="project-card fade-in">
       <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80" alt="LLM System Design" class="project-thumb">
-      <div class="project-top"><span class="project-name">Production-Ready LLM Backend System</span><span class="project-arrow">&#8599;</span></div>
-      <p class="project-desc">
-        <strong style="color:var(--text)">Problem:</strong> Deploying LLMs in production requires more than API calls. Teams need rate limiting, cost control, auth, and fallback logic to run reliably at scale.<br><br>
-        <strong style="color:var(--text)">Solution:</strong> Built a scalable LLM backend using FastAPI with authentication, per-user rate limiting, token cost accounting, and provider fallback logic.
-      </p>
-      <div class="project-result">
-        <span class="project-result-label">Result</span>
-        <span class="project-result-text">A drop-in backend that handles auth, abuse prevention, cost tracking, and failover out of the box.</span>
-      </div>
+      <div class="project-top"><span class="project-name">Production-Ready LLM Backend System</span><span class="project-arrow">↗</span></div>
+      <p class="project-desc"><strong style="color:var(--text)">Problem:</strong> Deploying LLMs in production requires more than API calls — teams need rate limiting, cost control, auth, and fallback logic to run reliably at scale.<br><br><strong style="color:var(--text)">Solution:</strong> Built a scalable LLM backend using FastAPI with authentication, per-user rate limiting, token cost accounting, and provider fallback logic.</p>
+      <div class="project-result"><span class="project-result-label">Result</span><span class="project-result-text">A drop-in backend that handles auth, abuse prevention, cost tracking, and failover out of the box.</span></div>
       <div class="project-tags"><span class="pill">FastAPI</span><span class="pill">LLM</span><span class="pill">Python</span><span class="pill">System Design</span></div>
-      <a href="https://youtu.be/2KCNXwQrQRI" target="_blank" onclick="event.stopPropagation()" class="btn btn-primary" style="margin-top:0.85rem;font-size:0.78rem;display:inline-flex;">&#9654; See It in Action</a>
+      <a href="https://youtu.be/2KCNXwQrQRI" target="_blank" onclick="event.stopPropagation()" class="btn btn-primary" style="margin-top:0.85rem;font-size:0.78rem;display:inline-flex;">▶ See It in Action</a>
     </a>
 
-    <!-- SheGuard AI -->
     <a href="https://github.com/tulika105/SheGuard-AI" target="_blank" class="project-card fade-in">
       <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=80" alt="SheGuard AI" class="project-thumb">
-      <div class="project-top"><span class="project-name">SheGuard AI</span><span class="project-arrow">&#8599;</span></div>
-      <p class="project-desc">
-        <strong style="color:var(--text)">Problem:</strong> Existing safety tools for women are reactive, alerting after danger occurs rather than providing proactive, situational guidance.<br><br>
-        <strong style="color:var(--text)">Solution:</strong> Built an AI safety advisor using Llama-3.3-70b and LangChain with Chain-of-Thought reasoning that delivers age-specific safety tips, self-defense techniques, and relevant video resources.
-      </p>
-      <div class="project-result">
-        <span class="project-result-label">Result</span>
-        <span class="project-result-text">Rated 9–10/10 by real users across age groups from 7 to 30+, with feedback like "very helpful", "very informative", and "responses are presented in a structured way".</span>
-      </div>
+      <div class="project-top"><span class="project-name">SheGuard AI</span><span class="project-arrow">↗</span></div>
+      <p class="project-desc"><strong style="color:var(--text)">Problem:</strong> Existing safety tools for women are reactive — alerting after danger occurs rather than providing proactive, situational guidance.<br><br><strong style="color:var(--text)">Solution:</strong> Built an AI safety advisor using Llama-3.3-70b and LangChain with Chain-of-Thought reasoning that delivers age-specific safety tips, self-defense techniques, and relevant video resources.</p>
+      <div class="project-result"><span class="project-result-label">Result</span><span class="project-result-text">Rated 9–10/10 by real users across age groups from 7 to 30+, with feedback like "very helpful", "very informative", and "responses are presented in a structured way".</span></div>
       <div class="project-tags"><span class="pill">LLaMA</span><span class="pill">Safety AI</span><span class="pill">Python</span></div>
-      <a href="https://huggingface.co/spaces/Tulika2000/SheGuard-AI" target="_blank" onclick="event.stopPropagation()" class="btn btn-primary" style="margin-top:0.85rem;font-size:0.78rem;display:inline-flex;">&#129303; Live Demo</a>
+      <a href="https://huggingface.co/spaces/Tulika2000/SheGuard-AI" target="_blank" onclick="event.stopPropagation()" class="btn btn-primary" style="margin-top:0.85rem;font-size:0.78rem;display:inline-flex;">🤗 Live Demo</a>
     </a>
 
-    <!-- LangChain Memory System -->
     <a href="https://github.com/tulika105/Memory-AI-Agent" target="_blank" class="project-card fade-in">
       <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80" alt="LangChain Memory System" class="project-thumb">
-      <div class="project-top"><span class="project-name">LangChain Memory System</span><span class="project-arrow">&#8599;</span></div>
-      <p class="project-desc">
-        <strong style="color:var(--text)">Problem:</strong> Most LangChain tutorials treat memory as a black box, leaving developers confused about what actually persists and what gets lost between sessions.<br><br>
-        <strong style="color:var(--text)">Solution:</strong> Built a focused system demonstrating both memory types — in-memory short-term context via LangChain and JSON-based long-term persistent storage, with daily reminders via GitHub Actions to log learnings.
-      </p>
-      <div class="project-result">
-        <span class="project-result-label">Result</span>
-        <span class="project-result-text">A clear, working reference for how memory behaves in LangChain, with session context and persistent recall made fully observable.</span>
-      </div>
+      <div class="project-top"><span class="project-name">LangChain Memory System</span><span class="project-arrow">↗</span></div>
+      <p class="project-desc"><strong style="color:var(--text)">Problem:</strong> Most LangChain tutorials treat memory as a black box, leaving developers confused about what actually persists and what gets lost between sessions.<br><br><strong style="color:var(--text)">Solution:</strong> Built a focused system demonstrating both memory types — in-memory short-term context via LangChain and JSON-based long-term persistent storage, with daily reminders via GitHub Actions to log learnings.</p>
+      <div class="project-result"><span class="project-result-label">Result</span><span class="project-result-text">A clear, working reference for how memory behaves in LangChain, with session context and persistent recall made fully observable.</span></div>
       <div class="project-tags"><span class="pill">LangChain</span><span class="pill">Memory</span><span class="pill">GitHub Actions</span><span class="pill">Python</span></div>
-      <a href="https://youtu.be/9gIWfDSTpNQ" target="_blank" onclick="event.stopPropagation()" class="btn btn-primary" style="margin-top:0.85rem;font-size:0.78rem;display:inline-flex;">&#9654; See It in Action</a>
+      <a href="https://youtu.be/9gIWfDSTpNQ" target="_blank" onclick="event.stopPropagation()" class="btn btn-primary" style="margin-top:0.85rem;font-size:0.78rem;display:inline-flex;">▶ See It in Action</a>
     </a>
 
   </div>
@@ -344,10 +298,10 @@
   <div class="projects-grid">
     <div class="project-card">
       <div class="project-top">
-        <span class="project-name">&#127942; Distinguished Social Impact Innovation</span>
+        <span class="project-name">🏆 Distinguished Social Impact Innovation</span>
         <span class="exp-date">2025</span>
       </div>
-      <p class="project-desc">Won at the <strong style="color:var(--text)">Agentic AI Innovation Challenge 2025</strong> on Ready Tensor for SheGuard, an AI-powered personal safety advisor for women, built with LLaMA 3.3-70b, LangChain, and deployed on Hugging Face Spaces. Ranked in the <strong style="color:var(--text)">top 38 out of 674 entries</strong> in the Distinguished Social Impact Innovation category.</p>
+      <p class="project-desc">Won at the <strong style="color:var(--text)">Agentic AI Innovation Challenge 2025</strong> on Ready Tensor for SheGuard — an AI-powered personal safety advisor for women, built with LLaMA 3.3-70b, LangChain, and deployed on Hugging Face Spaces. Ranked in the <strong style="color:var(--text)">top 38 out of 674 entries</strong> in the Distinguished Social Impact Innovation category.</p>
       <div class="project-tags"><span class="pill">LLaMA</span><span class="pill">LangChain</span><span class="pill">Gradio</span><span class="pill">Ready Tensor</span></div>
       <a href="https://app.readytensor.ai/publications/sheguard-an-ai-powered-personal-safety-advisor-for-women-of-all-ages-nIHwyQJQ7bIR" target="_blank" class="btn btn-primary" style="margin-top:0.75rem;font-size:0.78rem;">Read Publication</a>
     </div>
@@ -362,7 +316,7 @@
   <h2>What I work with</h2>
   <div class="skills-grid">
     <div class="skills-group">
-      <p class="skills-group-title">Languages &amp; Data</p>
+      <p class="skills-group-title">Languages & Data</p>
       <div class="skills-list">
         <span class="skill-chip">Python</span><span class="skill-chip">Pandas</span><span class="skill-chip">NumPy</span><span class="skill-chip">Matplotlib</span>
       </div>
@@ -374,7 +328,7 @@
       </div>
     </div>
     <div class="skills-group">
-      <p class="skills-group-title">LLMs &amp; GenAI</p>
+      <p class="skills-group-title">LLMs & GenAI</p>
       <div class="skills-list">
         <span class="skill-chip">Prompt Engineering</span><span class="skill-chip">RAG</span><span class="skill-chip">LangChain</span>
         <span class="skill-chip">LangGraph</span><span class="skill-chip">HuggingFace</span>
@@ -383,7 +337,7 @@
       </div>
     </div>
     <div class="skills-group">
-      <p class="skills-group-title">Dev &amp; Deployment</p>
+      <p class="skills-group-title">Dev & Deployment</p>
       <div class="skills-list">
         <span class="skill-chip">FastAPI</span><span class="skill-chip">Streamlit</span><span class="skill-chip">Gradio</span>
         <span class="skill-chip">Git</span><span class="skill-chip">GitHub</span><span class="skill-chip">REST APIs</span>
@@ -426,17 +380,12 @@
 </section>
 
 <footer>
-  <p>Built by <a href="https://github.com/tulika105">Tulika Das</a> &middot; tulika105.github.io</p>
+  <p>Built by <a href="https://github.com/tulika105">Tulika Das</a> · tulika105.github.io</p>
 </footer>
 
 <script>
   const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
