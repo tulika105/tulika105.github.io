@@ -33,21 +33,12 @@
     .hero-content { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
     .hero-text { flex: 1; min-width: 280px; }
     .hero-photo { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(124,106,247,0.4); flex-shrink: 0; }
-    .tag {
-      display: inline-block; font-size: 0.7rem; color: var(--accent-light);
-      background: rgba(124,106,247,0.1); border: 1px solid rgba(124,106,247,0.25);
-      border-radius: 999px; padding: 0.25rem 0.8rem; margin-bottom: 1.5rem;
-      letter-spacing: 0.06em; text-transform: uppercase;
-    }
+    .tag { display: inline-block; font-size: 0.7rem; color: var(--accent-light); background: rgba(124,106,247,0.1); border: 1px solid rgba(124,106,247,0.25); border-radius: 999px; padding: 0.25rem 0.8rem; margin-bottom: 1.5rem; letter-spacing: 0.06em; text-transform: uppercase; }
     h1 { font-size: clamp(2.4rem, 6vw, 3.8rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.25rem; }
     h1 span { color: var(--accent-light); }
     .hero-bio { font-size: 1.1rem; color: var(--muted); max-width: 520px; margin-bottom: 2rem; }
     .hero-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      padding: 0.55rem 1.2rem; border-radius: 8px; font-size: 0.85rem;
-      font-weight: 500; text-decoration: none; transition: all 0.2s; cursor: pointer;
-    }
+    .btn { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.55rem 1.2rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; }
     .btn-primary { background: var(--accent); color: #fff; border: 1px solid var(--accent); }
     .btn-primary:hover { background: var(--accent-light); border-color: var(--accent-light); }
     .btn-ghost { background: transparent; color: var(--muted); border: 1px solid var(--border); }
@@ -66,7 +57,6 @@
     .exp-company { font-size: 0.82rem; color: var(--accent-light); margin-top: 0.2rem; }
     .exp-date { font-size: 0.75rem; color: var(--muted); background: rgba(124,106,247,0.07); border: 1px solid rgba(124,106,247,0.18); padding: 0.2rem 0.7rem; border-radius: 999px; white-space: nowrap; }
     .exp-para { font-size: 0.84rem; color: var(--muted); line-height: 1.75; }
-
     .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
     .exp-bullets li { font-size: 0.84rem; color: var(--muted); line-height: 1.65; padding-left: 1rem; position: relative; }
     .exp-bullets li::before { content: "·"; position: absolute; left: 0; color: var(--accent-light); font-size: 1.2rem; line-height: 1.2; }
@@ -75,11 +65,7 @@
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
     .projects-grid { display: grid; grid-template-columns: 1fr; gap: 0.875rem; }
-    .project-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 12px; padding: 1.4rem; transition: border-color 0.2s, transform 0.2s;
-      text-decoration: none; color: inherit; display: block;
-    }
+    .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem; transition: border-color 0.2s, transform 0.2s; text-decoration: none; color: inherit; display: block; }
     .project-card:hover { border-color: rgba(124,106,247,0.45); transform: translateY(-2px); }
     .project-thumb { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; filter: brightness(0.85); }
     .project-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 0.45rem; }
@@ -88,19 +74,8 @@
     .project-card:hover .project-arrow { color: var(--accent-light); }
     .project-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
     .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .pill {
-      font-size: 0.68rem; padding: 0.18rem 0.6rem; border-radius: 999px;
-      background: rgba(124,106,247,0.07); color: var(--accent-light);
-      border: 1px solid rgba(124,106,247,0.18);
-    }
-    .project-result {
-      display: flex; align-items: baseline; gap: 0.5rem;
-      margin-top: 0.9rem; margin-bottom: 0.9rem;
-      padding: 0.55rem 0.85rem;
-      background: rgba(124,106,247,0.06);
-      border-left: 3px solid var(--accent);
-      border-radius: 0 6px 6px 0;
-    }
+    .pill { font-size: 0.68rem; padding: 0.18rem 0.6rem; border-radius: 999px; background: rgba(124,106,247,0.07); color: var(--accent-light); border: 1px solid rgba(124,106,247,0.18); }
+    .project-result { display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.9rem; margin-bottom: 0.9rem; padding: 0.55rem 0.85rem; background: rgba(124,106,247,0.06); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; }
     .project-result-label { font-size: 0.63rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-light); white-space: nowrap; flex-shrink: 0; }
     .project-result-text { font-size: 0.82rem; color: var(--text); line-height: 1.5; }
 
@@ -155,8 +130,8 @@
 <section id="hero">
   <div class="hero-content">
     <div class="hero-text">
-      <span class="tag">Seeking AI Engineer / GenAI roles</span>
-      <h1>Hi, I'm <span>Tulika Das</span></h1>
+      <span class="tag">Open to AI Engineer Roles</span>
+      <h1>Hi, I'm <span>Tulika</span></h1>
       <p class="hero-bio">I build agentic AI systems that reason, act, and deliver from multi-agent pipelines to RAG-powered solutions.</p>
       <div class="hero-links">
         <a href="#projects" class="btn btn-primary">View Projects →</a>
@@ -175,7 +150,7 @@
   <p class="section-label">About</p>
   <h2>About Me</h2>
   <div class="about-text">
-    <p>Based in India with a deep focus on large language models, retrieval-augmented generation, and agentic AI systems. I enjoy the full arc of building — from designing pipelines and evaluating models to shipping clean, working code.</p>
+    <p>Based in India with a deep focus on large language models, retrieval-augmented generation, and agentic AI systems. I enjoy the full arc of building from designing pipelines and evaluating models to shipping clean, working code.</p>
     <p>My recent work spans scalable LLM backends, memory-based agents, hybrid RAG systems, and AI safety tools. I care about building things that are not just technically interesting but genuinely useful.</p>
   </div>
 </section>
@@ -255,7 +230,7 @@
   <div class="projects-grid">
 
     <a href="https://github.com/tulika105/Multi-Agent-Complaint-System" target="_blank" class="project-card fade-in">
-      <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?w=800&q=80" alt="Multi-Agent Complaint System" class="project-thumb">
+      <img src="assets/multiagent.png" alt="Multi-Agent Complaint System" class="project-thumb">
       <div class="project-top"><span class="project-name">Multi-Agent Complaint System</span><span class="project-arrow">↗</span></div>
       <p class="project-desc"><strong style="color:var(--text)">Problem:</strong> Customer support teams struggle with high complaint volumes, mixing urgent issues with trivial queries and causing missed escalations.<br><br><strong style="color:var(--text)">Solution:</strong> Built a multi-agent system using LangGraph, Llama-3, and Gemini that auto-routes complaints by urgency, loops in human managers for high-severity cases, and sends automated email resolutions.</p>
       <div class="project-result"><span class="project-result-label">Result</span><span class="project-result-text">Critical complaints reach managers automatically, with no manual sorting needed.</span></div>
@@ -266,16 +241,16 @@
     <a href="https://github.com/tulika105/Research-Agent" target="_blank" class="project-card fade-in">
       <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80" alt="Research Agent" class="project-thumb">
       <div class="project-top"><span class="project-name">Autonomous Research Agent (ReAct-based)</span><span class="project-arrow">↗</span></div>
-      <p class="project-desc"><strong style="color:var(--text)">Problem:</strong> Manual research is slow and fragmented — searching multiple queries, reading articles, and synthesizing findings takes hours.<br><br><strong style="color:var(--text)">Solution:</strong> Built a ReAct agent using LangGraph and Groq that autonomously searches DuckDuckGo across multiple angles and compiles findings into a structured 6-section research report from the CLI.</p>
-      <div class="project-result"><span class="project-result-label">Result</span><span class="project-result-text">One prompt produces a full, structured research report in seconds from the CLI.</span></div>
+      <p class="project-desc"><strong style="color:var(--text)">Problem:</strong> Manual research is slow and fragmented, searching multiple queries, reading articles, and synthesizing findings takes hours.<br><br><strong style="color:var(--text)">Solution:</strong> Built a ReAct agent using LangGraph and Groq that autonomously searches DuckDuckGo across multiple angles and compiles findings into a structured 6-section research report.</p>
+      <div class="project-result"><span class="project-result-label">Result</span><span class="project-result-text">One prompt produces a full, structured research report in seconds.</span></div>
       <div class="project-tags"><span class="pill">LangGraph</span><span class="pill">Groq</span><span class="pill">ReAct</span><span class="pill">Python</span></div>
       <a href="https://youtu.be/jwLssPBL_Yw" target="_blank" onclick="event.stopPropagation()" class="btn btn-primary" style="margin-top:0.85rem;font-size:0.78rem;display:inline-flex;">▶ See It in Action</a>
     </a>
 
     <a href="https://github.com/tulika105/SheGuard-AI" target="_blank" class="project-card fade-in">
-      <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=80" alt="SheGuard AI" class="project-thumb">
+      <img src="assets/sheguard.png" alt="SheGuard AI" class="project-thumb">
       <div class="project-top"><span class="project-name">SheGuard AI</span><span class="project-arrow">↗</span></div>
-      <p class="project-desc"><strong style="color:var(--text)">Problem:</strong> Existing safety tools for women are reactive — alerting after danger occurs rather than providing proactive, situational guidance.<br><br><strong style="color:var(--text)">Solution:</strong> Built an AI safety advisor using Llama-3.3-70b and LangChain with Chain-of-Thought reasoning that delivers age-specific safety tips, self-defense techniques, and relevant video resources.</p>
+      <p class="project-desc"><strong style="color:var(--text)">Problem:</strong> Existing safety tools for women are reactive, alerting after danger occurs rather than providing proactive, situational guidance.<br><br><strong style="color:var(--text)">Solution:</strong> Built an AI safety advisor using Llama-3.3-70b and LangChain with Chain-of-Thought reasoning that delivers age-specific safety tips, self-defense techniques, and relevant video resources.</p>
       <div class="project-result"><span class="project-result-label">Result</span><span class="project-result-text">Rated 9–10/10 by real users across age groups from 7 to 30+, with feedback like "very helpful", "very informative", and "responses are presented in a structured way".</span></div>
       <div class="project-tags"><span class="pill">LLaMA</span><span class="pill">Safety AI</span><span class="pill">Python</span></div>
       <a href="https://huggingface.co/spaces/Tulika2000/SheGuard-AI" target="_blank" onclick="event.stopPropagation()" class="btn btn-primary" style="margin-top:0.85rem;font-size:0.78rem;display:inline-flex;">🤗 Live Demo</a>
@@ -284,7 +259,7 @@
     <a href="https://github.com/tulika105/LLM-System-Design" target="_blank" class="project-card fade-in">
       <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80" alt="LLM System Design" class="project-thumb">
       <div class="project-top"><span class="project-name">Production-Ready LLM Backend System</span><span class="project-arrow">↗</span></div>
-      <p class="project-desc"><strong style="color:var(--text)">Problem:</strong> Deploying LLMs in production requires more than API calls — teams need rate limiting, cost control, auth, and fallback logic to run reliably at scale.<br><br><strong style="color:var(--text)">Solution:</strong> Built a scalable LLM backend using FastAPI with authentication, per-user rate limiting, token cost accounting, and provider fallback logic.</p>
+      <p class="project-desc"><strong style="color:var(--text)">Problem:</strong> Deploying LLMs in production requires more than API calls, teams need rate limiting, cost control, auth, and fallback logic to run reliably at scale.<br><br><strong style="color:var(--text)">Solution:</strong> Built a scalable LLM backend using FastAPI with authentication, per-user rate limiting, token cost accounting, and provider fallback logic.</p>
       <div class="project-result"><span class="project-result-label">Result</span><span class="project-result-text">A drop-in backend that handles auth, abuse prevention, cost tracking, and failover out of the box.</span></div>
       <div class="project-tags"><span class="pill">FastAPI</span><span class="pill">LLM</span><span class="pill">Python</span><span class="pill">System Design</span></div>
       <a href="https://youtu.be/2KCNXwQrQRI" target="_blank" onclick="event.stopPropagation()" class="btn btn-primary" style="margin-top:0.85rem;font-size:0.78rem;display:inline-flex;">▶ See It in Action</a>
@@ -293,7 +268,7 @@
     <a href="https://github.com/tulika105/Memory-AI-Agent" target="_blank" class="project-card fade-in">
       <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80" alt="LangChain Memory System" class="project-thumb">
       <div class="project-top"><span class="project-name">LangChain Memory System</span><span class="project-arrow">↗</span></div>
-      <p class="project-desc"><strong style="color:var(--text)">Problem:</strong> Most LangChain tutorials treat memory as a black box, leaving developers confused about what actually persists and what gets lost between sessions.<br><br><strong style="color:var(--text)">Solution:</strong> Built a focused system demonstrating both memory types — in-memory short-term context via LangChain and JSON-based long-term persistent storage, with daily reminders via GitHub Actions to log learnings.</p>
+      <p class="project-desc"><strong style="color:var(--text)">Problem:</strong> Most LangChain tutorials treat memory as a black box, leaving developers confused about what actually persists and what gets lost between sessions.<br><br><strong style="color:var(--text)">Solution:</strong> Built a focused system demonstrating both memory types, in-memory short-term context via LangChain and JSON-based long-term persistent storage, with daily reminders via GitHub Actions to log learnings.</p>
       <div class="project-result"><span class="project-result-label">Result</span><span class="project-result-text">A clear, working reference for how memory behaves in LangChain, with session context and persistent recall made fully observable.</span></div>
       <div class="project-tags"><span class="pill">LangChain</span><span class="pill">Memory</span><span class="pill">GitHub Actions</span><span class="pill">Python</span></div>
       <a href="https://youtu.be/9gIWfDSTpNQ" target="_blank" onclick="event.stopPropagation()" class="btn btn-primary" style="margin-top:0.85rem;font-size:0.78rem;display:inline-flex;">▶ See It in Action</a>
@@ -314,7 +289,7 @@
         <span class="project-name">🏆 Distinguished Social Impact Innovation</span>
         <span class="exp-date">2025</span>
       </div>
-      <p class="project-desc">Won at the <strong style="color:var(--text)">Agentic AI Innovation Challenge 2025</strong> on Ready Tensor for SheGuard — an AI-powered personal safety advisor for women, built with LLaMA 3.3-70b, LangChain, and deployed on Hugging Face Spaces. Ranked in the <strong style="color:var(--text)">top 38 out of 674 entries</strong> in the Distinguished Social Impact Innovation category.</p>
+      <p class="project-desc">Won at the <strong style="color:var(--text)">Agentic AI Innovation Challenge 2025</strong> on Ready Tensor for SheGuard, an AI-powered personal safety advisor for women, built with LLaMA 3.3-70b, LangChain, and deployed on Hugging Face Spaces. Ranked in the <strong style="color:var(--text)">top 38 out of 674 entries</strong> in the Distinguished Social Impact Innovation category.</p>
       <div class="project-tags"><span class="pill">LLaMA</span><span class="pill">LangChain</span><span class="pill">Gradio</span><span class="pill">Ready Tensor</span></div>
       <a href="https://app.readytensor.ai/publications/sheguard-an-ai-powered-personal-safety-advisor-for-women-of-all-ages-nIHwyQJQ7bIR" target="_blank" class="btn btn-primary" style="margin-top:0.75rem;font-size:0.78rem;">Read Publication</a>
     </div>
@@ -328,7 +303,6 @@
   <p class="section-label">Testimonials</p>
   <h2>What People Say</h2>
   <div class="exp-list">
-
     <div class="exp-card">
       <p class="exp-para" style="font-style:italic; margin-bottom:1rem;">"Tulika quickly adapted to our AI codebase and contributed to Voice AI POCs, LLM prompt optimization, and a multi-agent MVP using LangGraph. Hardworking, technically curious, and someone I'm confident will add value in Agentic AI roles."</p>
       <div>
@@ -336,7 +310,6 @@
         <p class="exp-company">Tulu Health</p>
       </div>
     </div>
-
     <div class="exp-card">
       <p class="exp-para" style="font-style:italic; margin-bottom:1rem;">"Throughout the internship, Tulika consistently demonstrated professionalism, commitment, and a strong work ethic. Her performance was commendable and made a positive impression on the team."</p>
       <div>
@@ -344,7 +317,6 @@
         <p class="exp-company">Neuro Web Solutions</p>
       </div>
     </div>
-
   </div>
 </section>
 
