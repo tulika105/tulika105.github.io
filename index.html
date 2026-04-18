@@ -51,47 +51,122 @@
     .about-text p + p { margin-top: 1rem; }
 
     .exp-list { display: flex; flex-direction: column; gap: 1.5rem; }
-    .exp-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+    .exp-card { border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+    .exp-card-purple { background: rgba(124,106,247,0.05); border-color: rgba(124,106,247,0.2); border-left: 4px solid var(--accent); }
+    .exp-card-teal { background: rgba(29,158,117,0.05); border-color: rgba(29,158,117,0.2); border-left: 4px solid #1D9E75; }
     .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
     .exp-role { font-weight: 600; font-size: 0.975rem; color: var(--text); }
     .exp-company { font-size: 0.82rem; color: var(--accent-light); margin-top: 0.2rem; }
+    .exp-company-teal { color: #5DCAA5; }
     .exp-date { font-size: 0.75rem; color: var(--muted); background: rgba(124,106,247,0.07); border: 1px solid rgba(124,106,247,0.18); padding: 0.2rem 0.7rem; border-radius: 999px; white-space: nowrap; }
+    .exp-date-teal { background: rgba(29,158,117,0.07); border-color: rgba(29,158,117,0.2); }
     .exp-para { font-size: 0.84rem; color: var(--muted); line-height: 1.75; }
     .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
     .exp-bullets li { font-size: 0.84rem; color: var(--muted); line-height: 1.65; padding-left: 1rem; position: relative; }
     .exp-bullets li::before { content: "·"; position: absolute; left: 0; color: var(--accent-light); font-size: 1.2rem; line-height: 1.2; }
+    .exp-card-teal .exp-bullets li::before { color: #5DCAA5; }
 
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    .projects-grid { display: grid; grid-template-columns: 1fr; gap: 0.875rem; }
-    .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem; transition: border-color 0.2s, transform 0.2s; display: block; color: inherit; }
+    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: stretch; }
+    @media (max-width: 600px) { .projects-grid { grid-template-columns: 1fr; } }
+    .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; color: inherit; height: 100%; }
     .project-card:hover { border-color: rgba(124,106,247,0.35); transform: translateY(-2px); }
-    .project-thumb { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; filter: brightness(0.85); }
-    .project-name { font-weight: 600; font-size: 0.975rem; color: var(--text); margin-bottom: 0.45rem; }
-    .project-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
+    .project-thumb { width: 100%; height: 160px; object-fit: cover; object-position: center top; border-radius: 8px; margin-bottom: 1rem; filter: brightness(0.92); flex-shrink: 0; }
+    .project-name { font-weight: 600; font-size: 0.9rem; color: var(--text); margin-bottom: 0.5rem; }
+    .project-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.75rem; flex-grow: 1; }
     .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .pill { font-size: 0.68rem; padding: 0.18rem 0.6rem; border-radius: 999px; background: rgba(124,106,247,0.07); color: var(--accent-light); border: 1px solid rgba(124,106,247,0.18); }
-    .project-result { display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.9rem; margin-bottom: 0.9rem; padding: 0.55rem 0.85rem; background: rgba(124,106,247,0.06); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; }
-    .project-result-label { font-size: 0.63rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-light); white-space: nowrap; flex-shrink: 0; }
-    .project-result-text { font-size: 0.82rem; color: var(--text); line-height: 1.5; }
-    .project-actions { display: flex; gap: 0.6rem; margin-top: 1rem; flex-wrap: wrap; }
-    .project-actions .btn { flex: 1; justify-content: center; font-size: 0.8rem; padding: 0.5rem 0.75rem; }
+    .pill { font-size: 0.65rem; padding: 0.15rem 0.55rem; border-radius: 999px; background: rgba(124,106,247,0.07); color: var(--accent-light); border: 1px solid rgba(124,106,247,0.18); }
+    .project-result { display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.75rem; margin-bottom: 0.75rem; padding: 0.5rem 0.75rem; border-left: 3px solid; border-radius: 0 6px 6px 0; }
+    .project-result-label { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; flex-shrink: 0; }
+    .project-result-text { font-size: 0.78rem; color: var(--text); line-height: 1.5; }
+    .result-purple { background: rgba(124,106,247,0.07); border-color: var(--accent); }
+    .result-purple .project-result-label { color: var(--accent-light); }
+    .result-teal { background: rgba(29,158,117,0.07); border-color: #1D9E75; }
+    .result-teal .project-result-label { color: #5DCAA5; }
+    .result-blue { background: rgba(55,138,221,0.07); border-color: #378ADD; }
+    .result-blue .project-result-label { color: #85B7EB; }
+    .result-coral { background: rgba(216,90,48,0.07); border-color: #D85A30; }
+    .result-coral .project-result-label { color: #F0997B; }
+    .result-amber { background: rgba(186,117,23,0.08); border-color: #BA7517; }
+    .result-amber .project-result-label { color: #FAC775; }
+    .project-actions { display: flex; gap: 0.5rem; margin-top: auto; padding-top: 0.875rem; flex-wrap: wrap; }
+    .project-actions .btn { flex: 1; justify-content: center; font-size: 0.75rem; padding: 0.45rem 0.6rem; }
 
-    /* Blog cards */
-    .blog-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-    .blog-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem; transition: border-color 0.2s, transform 0.2s; }
-    .blog-card:hover { border-color: rgba(124,106,247,0.35); transform: translateY(-2px); }
-    .blog-tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--accent-light); margin-bottom: 0.5rem; }
-    .blog-title { font-weight: 600; font-size: 1rem; color: var(--text); margin-bottom: 0.5rem; line-height: 1.4; }
-    .blog-excerpt { font-size: 0.83rem; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; }
+    .blog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: stretch; }
+    .blog-card { border-radius: 12px; padding: 1.4rem; transition: border-color 0.2s, transform 0.2s; border: 1px solid var(--border); display: flex; flex-direction: column; height: 100%; }
+    .blog-card:hover { transform: translateY(-2px); }
+    .blog-card-teal { background: rgba(29,158,117,0.07); border-color: rgba(29,158,117,0.2); }
+    .blog-card-teal:hover { border-color: rgba(29,158,117,0.45); }
+    .blog-card-purple { background: rgba(124,106,247,0.07); border-color: rgba(124,106,247,0.2); }
+    .blog-card-purple:hover { border-color: rgba(124,106,247,0.45); }
+    .blog-tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.5rem; }
+    .blog-tag-teal { color: #5DCAA5; }
+    .blog-tag-purple { color: var(--accent-light); }
+    .blog-title { font-weight: 600; font-size: 0.92rem; color: var(--text); margin-bottom: 0.5rem; line-height: 1.4; }
+    .blog-excerpt { font-size: 0.8rem; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; flex-grow: 1; }
     .blog-meta { font-size: 0.72rem; color: var(--muted); margin-bottom: 1rem; }
+    .btn-teal { background: rgba(29,158,117,0.15); color: #5DCAA5; border: 1px solid rgba(29,158,117,0.3); }
+    .btn-teal:hover { background: rgba(29,158,117,0.25); border-color: rgba(29,158,117,0.5); }
+    @media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } }
 
-    .skills-grid { display: flex; flex-direction: column; gap: 2.25rem; }
-    .skills-group { display: flex; flex-direction: column; gap: 0.4rem; }
-    .skills-group-title { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); font-weight: 700; }
-    .skills-list { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.5rem; }
-    .skill-chip { font-size: 0.8rem; padding: 0.3rem 0.8rem; border-radius: 8px; background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    .achievement-card { background: rgba(124,106,247,0.06); border: 1px solid rgba(124,106,247,0.2); border-left: 4px solid var(--accent); border-radius: 12px; padding: 1.5rem; }
+
+    /* ── Skills (new tiered layout) ── */
+    .skills-tier-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1rem;
+    }
+    .skills-tier-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.4rem;
+      transition: border-color 0.2s;
+    }
+    .skills-tier-card:hover { border-color: rgba(124,106,247,0.25); }
+    .skills-tier-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 1rem;
+    }
+    .tier-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .tier-dot-purple { background: #7c6af7; }
+    .tier-dot-teal   { background: #1D9E75; }
+    .tier-dot-blue   { background: #378ADD; }
+    .tier-dot-gray   { background: #5F5E5A; }
+    .skills-tier-title {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .skills-tier-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .skill-chip {
+      font-size: 0.78rem;
+      padding: 0.28rem 0.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, color 0.2s;
+      cursor: default;
+    }
+    .skill-chip:hover { border-color: rgba(124,106,247,0.5); color: var(--accent-light); }
+    .chip-purple { background: rgba(124,106,247,0.08); color: #a89cf7; border-color: rgba(124,106,247,0.2); }
+    .chip-teal   { background: rgba(29,158,117,0.08); color: #5DCAA5; border-color: rgba(29,158,117,0.2); }
+    .chip-blue   { background: rgba(55,138,221,0.08); color: #85B7EB; border-color: rgba(55,138,221,0.2); }
+    .chip-gray   { background: rgba(95,94,90,0.12);   color: var(--muted); border-color: rgba(95,94,90,0.25); }
 
     .contact-top { margin-bottom: 1.5rem; }
     .contact-link { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.2rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
@@ -107,17 +182,8 @@
     .form-group input:focus, .form-group textarea:focus { border-color: rgba(124,106,247,0.5); }
     .form-group input::placeholder, .form-group textarea::placeholder { color: #444455; }
 
-    /* Scroll progress bar */
     #progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent-light)); width: 0%; z-index: 200; transition: width 0.1s linear; }
-
-    /* Active nav link */
     .nav-links a.active { color: var(--text); }
-
-    /* Skill chip hover */
-    .skill-chip { font-size: 0.8rem; padding: 0.3rem 0.8rem; border-radius: 8px; background: var(--surface); color: var(--text); border: 1px solid var(--border); transition: border-color 0.2s, color 0.2s, box-shadow 0.2s; cursor: default; }
-    .skill-chip:hover { border-color: rgba(124,106,247,0.5); color: var(--accent-light); box-shadow: 0 0 8px rgba(124,106,247,0.2); }
-
-    /* Typing cursor */
     .typing-cursor { display: inline-block; width: 3px; height: 1em; background: var(--accent-light); margin-left: 2px; vertical-align: middle; animation: blink 0.8s step-end infinite; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
@@ -130,6 +196,7 @@
       .nav-links { gap: 1.25rem; }
       section { padding: 4rem 1.25rem; }
       .form-row { grid-template-columns: 1fr; }
+      .skills-tier-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -194,9 +261,8 @@
       <p class="project-desc">
         <strong style="color:var(--text)">Problem:</strong> Customer support teams struggle with high complaint volumes, mixing urgent issues with trivial queries and causing missed escalations.<br><br>
         <strong style="color:var(--text)">Solution:</strong> Built a multi-agent system using LangGraph, Llama-3, and Gemini that auto-routes complaints by urgency, loops in human managers for high-severity cases, and sends automated email resolutions.
-
       </p>
-      <div class="project-result"><span class="project-result-label">Result</span><span class="project-result-text">Critical complaints reach managers automatically, with no manual sorting needed.</span></div>
+      <div class="project-result result-purple"><span class="project-result-label">Result</span><span class="project-result-text">Critical complaints reach managers automatically, with no manual sorting needed.</span></div>
       <div class="project-tags"><span class="pill">LangGraph</span><span class="pill">LLaMA-3</span><span class="pill">Gemini</span><span class="pill">HITL</span><span class="pill">Python</span></div>
       <div class="project-actions">
         <a href="https://github.com/tulika105/Multi-Agent-Complaint-System" target="_blank" class="btn btn-primary">
@@ -214,7 +280,7 @@
         <strong style="color:var(--text)">Problem:</strong> Manual research is slow and fragmented. Searching multiple queries, reading articles, and synthesizing findings takes hours.<br><br>
         <strong style="color:var(--text)">Solution:</strong> Built a ReAct agent using LangGraph and Groq that autonomously searches DuckDuckGo across multiple angles and compiles findings into a structured 6-section research report.
       </p>
-      <div class="project-result"><span class="project-result-label">Result</span><span class="project-result-text">One prompt produces a full, structured research report in seconds.</span></div>
+      <div class="project-result result-teal"><span class="project-result-label">Result</span><span class="project-result-text">One prompt produces a full, structured research report in seconds.</span></div>
       <div class="project-tags"><span class="pill">LangGraph</span><span class="pill">Groq</span><span class="pill">ReAct</span><span class="pill">Python</span></div>
       <div class="project-actions">
         <a href="https://github.com/tulika105/Research-Agent" target="_blank" class="btn btn-primary">
@@ -232,7 +298,7 @@
         <strong style="color:var(--text)">Problem:</strong> Existing safety tools for women are reactive, alerting after danger occurs rather than providing proactive, situational guidance.<br><br>
         <strong style="color:var(--text)">Solution:</strong> Built an AI safety advisor using Llama-3.3-70b and LangChain with Chain-of-Thought reasoning that delivers age-specific safety tips, self-defense techniques, and relevant video resources.
       </p>
-      <div class="project-result"><span class="project-result-label">Result</span><span class="project-result-text">Rated 9–10/10 by real users across age groups from 7 to 30+, with feedback like "very helpful", "very informative", and "responses are presented in a structured way".</span></div>
+      <div class="project-result result-coral"><span class="project-result-label">Result</span><span class="project-result-text">Rated 9–10/10 by real users across age groups from 7 to 30+, with feedback like "very helpful", "very informative", and "responses are presented in a structured way".</span></div>
       <div class="project-tags"><span class="pill">LLaMA</span><span class="pill">Safety AI</span><span class="pill">Python</span></div>
       <div class="project-actions">
         <a href="https://github.com/tulika105/SheGuard-AI" target="_blank" class="btn btn-primary">
@@ -250,7 +316,7 @@
         <strong style="color:var(--text)">Problem:</strong> Deploying LLMs in production requires more than API calls, teams need rate limiting, cost control, auth, and fallback logic to run reliably at scale.<br><br>
         <strong style="color:var(--text)">Solution:</strong> Built a scalable LLM backend using FastAPI with authentication, per-user rate limiting, token cost accounting, and provider fallback logic.
       </p>
-      <div class="project-result"><span class="project-result-label">Result</span><span class="project-result-text">A drop-in backend that handles auth, abuse prevention, cost tracking, and failover out of the box.</span></div>
+      <div class="project-result result-blue"><span class="project-result-label">Result</span><span class="project-result-text">A drop-in backend that handles auth, abuse prevention, cost tracking, and failover out of the box.</span></div>
       <div class="project-tags"><span class="pill">FastAPI</span><span class="pill">LLM</span><span class="pill">Python</span><span class="pill">System Design</span></div>
       <div class="project-actions">
         <a href="https://github.com/tulika105/LLM-System-Design" target="_blank" class="btn btn-primary">
@@ -268,7 +334,7 @@
         <strong style="color:var(--text)">Problem:</strong> Most LangChain tutorials treat memory as a black box, leaving developers confused about what actually persists and what gets lost between sessions.<br><br>
         <strong style="color:var(--text)">Solution:</strong> Built a focused system demonstrating both memory types: in-memory short-term context via LangChain and JSON-based long-term persistent storage, with daily reminders via GitHub Actions to log learnings.
       </p>
-      <div class="project-result"><span class="project-result-label">Result</span><span class="project-result-text">A clear, working reference for how memory behaves in LangChain, with session context and persistent recall made fully observable.</span></div>
+      <div class="project-result result-amber"><span class="project-result-label">Result</span><span class="project-result-text">A clear, working reference for how memory behaves in LangChain, with session context and persistent recall made fully observable.</span></div>
       <div class="project-tags"><span class="pill">LangChain</span><span class="pill">Memory</span><span class="pill">GitHub Actions</span><span class="pill">Python</span></div>
       <div class="project-actions">
         <a href="https://github.com/tulika105/Memory-AI-Agent" target="_blank" class="btn btn-primary">
@@ -289,7 +355,7 @@
   <p class="section-label">Experience</p>
   <h2>Work Experience</h2>
   <div class="exp-list">
-    <div class="exp-card">
+    <div class="exp-card exp-card-purple">
       <div class="exp-header">
         <div>
           <p class="exp-role">AI Engineer Intern</p>
@@ -303,13 +369,13 @@
         <li>Designed a multi-agent orchestration MVP using LangGraph for hospital triage with emergency-priority routing, structured state transitions, and audit logging.</li>
       </ul>
     </div>
-    <div class="exp-card">
+    <div class="exp-card exp-card-teal">
       <div class="exp-header">
         <div>
           <p class="exp-role">AI Intern</p>
-          <p class="exp-company">Neuro Web Solutions, Rajkot</p>
+          <p class="exp-company exp-company-teal">Neuro Web Solutions, Rajkot</p>
         </div>
-        <span class="exp-date">Jan 2025 – May 2025</span>
+        <span class="exp-date exp-date-teal">Jan 2025 – May 2025</span>
       </div>
       <ul class="exp-bullets">
         <li>Implemented LangChain and a custom prompt engineering framework with 15+ templates for Algoace, an AI-powered programming assessment platform built for 1,000+ students.</li>
@@ -326,54 +392,95 @@
 <section id="achievements">
   <p class="section-label">Recognition</p>
   <h2>Achievements</h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:0.45rem; flex-wrap:wrap; gap:0.5rem;">
-        <span class="project-name">🏆 Distinguished Social Impact Innovation</span>
-        <span class="exp-date">2025</span>
+  <div class="achievement-card">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:0.75rem; flex-wrap:wrap; gap:0.5rem;">
+      <div style="display:flex; align-items:center; gap:0.75rem;">
+        <span style="font-size:1.6rem; line-height:1;">🏆</span>
+        <div>
+          <p class="project-name" style="margin-bottom:0.15rem;">Distinguished Social Impact Innovation</p>
+          <p style="font-size:0.78rem; color:var(--accent-light);">Agentic AI Innovation Challenge 2025 · Ready Tensor</p>
+        </div>
       </div>
-      <p class="project-desc">Won at the <strong style="color:var(--text)">Agentic AI Innovation Challenge 2025</strong> on Ready Tensor for SheGuard, an AI-powered personal safety advisor for women, built with LLaMA 3.3-70b, LangChain, and deployed on Hugging Face Spaces. Ranked in the <strong style="color:var(--text)">top 38 out of 674 entries</strong> in the Distinguished Social Impact Innovation category.</p>
-      <div class="project-tags" style="margin-bottom:0.75rem;"><span class="pill">LLaMA</span><span class="pill">LangChain</span><span class="pill">Gradio</span><span class="pill">Ready Tensor</span></div>
-      <a href="https://app.readytensor.ai/publications/sheguard-an-ai-powered-personal-safety-advisor-for-women-of-all-ages-nIHwyQJQ7bIR" target="_blank" class="btn btn-primary" style="font-size:0.78rem;">Read Publication</a>
+      <span class="exp-date">2025</span>
     </div>
+    <p class="project-desc" style="margin-bottom:1rem;">Built SheGuard, an AI-powered personal safety advisor for women, using LLaMA 3.3-70b, LangChain, and deployed on Hugging Face Spaces. Ranked in the <strong style="color:var(--text)">top 38 out of 674 entries</strong> in the Distinguished Social Impact Innovation category.</p>
+    <div class="project-tags" style="margin-bottom:1rem;"><span class="pill">LLaMA</span><span class="pill">LangChain</span><span class="pill">Gradio</span><span class="pill">Ready Tensor</span></div>
+    <a href="https://app.readytensor.ai/publications/sheguard-an-ai-powered-personal-safety-advisor-for-women-of-all-ages-nIHwyQJQ7bIR" target="_blank" class="btn btn-primary" style="font-size:0.78rem;">Read Publication</a>
   </div>
 </section>
 
 <hr class="divider">
 
-<!-- Skills -->
+<!-- Skills (tiered) -->
 <section id="skills">
   <p class="section-label">Skills</p>
   <h2>What I work with</h2>
-  <div class="skills-grid">
-    <div class="skills-group">
-      <p class="skills-group-title">Languages & Data</p>
-      <div class="skills-list">
-        <span class="skill-chip">Python</span><span class="skill-chip">Pandas</span><span class="skill-chip">NumPy</span><span class="skill-chip">Matplotlib</span>
+
+  <div class="skills-tier-grid">
+
+    <div class="skills-tier-card">
+      <div class="skills-tier-header">
+        <span class="tier-dot tier-dot-purple"></span>
+        <span class="skills-tier-title">Core stack</span>
+      </div>
+      <div class="skills-tier-chips">
+        <span class="skill-chip chip-purple">Python</span>
+        <span class="skill-chip chip-purple">LangChain</span>
+        <span class="skill-chip chip-purple">LangGraph</span>
+        <span class="skill-chip chip-purple">FastAPI</span>
+        <span class="skill-chip chip-purple">Prompt Engineering</span>
+        <span class="skill-chip chip-purple">Agentic AI</span>
+        <span class="skill-chip chip-purple">Multi-agent Systems</span>
       </div>
     </div>
-    <div class="skills-group">
-      <p class="skills-group-title">Machine Learning</p>
-      <div class="skills-list">
-        <span class="skill-chip">Scikit-learn</span><span class="skill-chip">TensorFlow</span><span class="skill-chip">NLP</span><span class="skill-chip">Model Evaluation</span>
+
+    <div class="skills-tier-card">
+      <div class="skills-tier-header">
+        <span class="tier-dot tier-dot-teal"></span>
+        <span class="skills-tier-title">LLM & Retrieval</span>
+      </div>
+      <div class="skills-tier-chips">
+        <span class="skill-chip chip-teal">RAG</span>
+        <span class="skill-chip chip-teal">RAGAS</span>
+        <span class="skill-chip chip-teal">Evals</span>
+        <span class="skill-chip chip-teal">ChromaDB</span>
+        <span class="skill-chip chip-teal">FAISS</span>
+        <span class="skill-chip chip-teal">HuggingFace</span>
+        <span class="skill-chip chip-teal">Llama 3</span>
+        <span class="skill-chip chip-teal">Gemini</span>
+        <span class="skill-chip chip-teal">Groq</span>
       </div>
     </div>
-    <div class="skills-group">
-      <p class="skills-group-title">LLMs & GenAI</p>
-      <div class="skills-list">
-        <span class="skill-chip">Prompt Engineering</span><span class="skill-chip">RAG</span><span class="skill-chip">LangChain</span>
-        <span class="skill-chip">LangGraph</span><span class="skill-chip">HuggingFace</span>
-        <span class="skill-chip">Faiss</span><span class="skill-chip">ChromaDB</span><span class="skill-chip">RAGAS</span>
-        <span class="skill-chip">Agentic AI</span><span class="skill-chip">Multi-Agents</span>
+
+    <div class="skills-tier-card">
+      <div class="skills-tier-header">
+        <span class="tier-dot tier-dot-blue"></span>
+        <span class="skills-tier-title">Dev & Deployment</span>
+      </div>
+      <div class="skills-tier-chips">
+        <span class="skill-chip chip-blue">Gradio</span>
+        <span class="skill-chip chip-blue">Streamlit</span>
+        <span class="skill-chip chip-blue">HuggingFace Spaces</span>
+        <span class="skill-chip chip-blue">GitHub Actions</span>
+        <span class="skill-chip chip-blue">Git</span>
+        <span class="skill-chip chip-blue">Token Cost Tracking</span>
       </div>
     </div>
-    <div class="skills-group">
-      <p class="skills-group-title">Dev & Deployment</p>
-      <div class="skills-list">
-        <span class="skill-chip">FastAPI</span><span class="skill-chip">Streamlit</span><span class="skill-chip">Gradio</span>
-        <span class="skill-chip">Git</span><span class="skill-chip">GitHub</span>
+
+    <div class="skills-tier-card">
+      <div class="skills-tier-header">
+        <span class="tier-dot tier-dot-gray"></span>
+        <span class="skills-tier-title">Familiar with</span>
+      </div>
+      <div class="skills-tier-chips">
+        <span class="skill-chip chip-gray">Scikit-learn</span>
+        <span class="skill-chip chip-gray">TensorFlow</span>
+        <span class="skill-chip chip-gray">Pandas</span>
+        <span class="skill-chip chip-gray">NumPy</span>
+        <span class="skill-chip chip-gray">NLP</span>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -385,18 +492,18 @@
   <h2>Blogs</h2>
   <div class="blog-grid">
 
-    <div class="blog-card fade-in">
-      <p class="blog-tag">RAG · Evaluation · RAGAS</p>
+    <div class="blog-card blog-card-teal fade-in">
+      <p class="blog-tag blog-tag-teal">RAG · Evaluation · RAGAS</p>
       <p class="blog-title">My RAG Pipeline Looked Fine Until I Measured It</p>
-      <p class="blog-excerpt">Built a RAG system, ran a few queries, called it done. Turns out that was just expensive vibe checking. Here's what RAGAS revealed about silent failures in retrieval and generation. That's where RAGAS comes in.</p>
+      <p class="blog-excerpt">Built a RAG system, ran a few queries, called it done. Turns out that was just expensive vibe checking. Here's what RAGAS revealed about silent failures in retrieval and generation.</p>
       <p class="blog-meta">5 min read · Medium</p>
-      <a href="https://medium.com/@tulika.das105/my-rag-pipeline-looked-fine-until-i-measured-it-8631a28a9f68" target="_blank" class="btn btn-primary" style="font-size:0.78rem;">Read Article →</a>
+      <a href="https://medium.com/@tulika.das105/my-rag-pipeline-looked-fine-until-i-measured-it-8631a28a9f68" target="_blank" class="btn btn-teal" style="font-size:0.78rem;">Read Article →</a>
     </div>
 
-    <div class="blog-card fade-in">
-      <p class="blog-tag">LangGraph · Multi-Agent · Production</p>
+    <div class="blog-card blog-card-purple fade-in">
+      <p class="blog-tag blog-tag-purple">LangGraph · Multi-Agent · Production</p>
       <p class="blog-title">From Prototype to Production: Building a Multi-Agent Complaint System with LangGraph</p>
-      <p class="blog-excerpt">Building a Multi-Agent Complaint System with LangGraph Getting it to work locally was just the first step. This is what it actually takes to take a multi-agent complaint routing system into the real world.</p>
+      <p class="blog-excerpt">Getting it to work locally was just the first step. This is what it actually takes to ship a multi-agent complaint routing system into the real world.</p>
       <p class="blog-meta">5 min read · Medium</p>
       <a href="https://medium.com/@tulika.das105/from-prototype-to-production-building-a-multi-agent-complaint-system-with-langgraph-4d06b499a7b9" target="_blank" class="btn btn-primary" style="font-size:0.78rem;">Read Article →</a>
     </div>
@@ -470,20 +577,17 @@
 </footer>
 
 <script>
-  // Fade-in on scroll
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  // Scroll progress bar
   const bar = document.getElementById('progress-bar');
   window.addEventListener('scroll', () => {
     const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
     bar.style.width = pct + '%';
   });
 
-  // Active nav highlight
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   const navObserver = new IntersectionObserver(entries => {
@@ -497,7 +601,6 @@
   }, { threshold: 0.4 });
   sections.forEach(s => navObserver.observe(s));
 
-  // Typing effect for hero bio
   const bioEl = document.querySelector('.hero-bio');
   const bioText = bioEl.textContent;
   bioEl.textContent = '';
