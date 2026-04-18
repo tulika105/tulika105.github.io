@@ -37,12 +37,34 @@
     h1 { font-size: clamp(2.4rem, 6vw, 3.8rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.25rem; }
     h1 span { color: var(--accent-light); }
     .hero-bio { font-size: 1.1rem; color: var(--muted); max-width: 520px; margin-bottom: 2rem; }
-    .hero-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .hero-links { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
     .btn { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.55rem 1.2rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; font-family: inherit; }
     .btn-primary { background: var(--accent); color: #fff; border: 1px solid var(--accent); }
     .btn-primary:hover { background: var(--accent-light); border-color: var(--accent-light); }
     .btn-ghost { background: transparent; color: var(--muted); border: 1px solid var(--border); }
     .btn-ghost:hover { color: var(--text); border-color: #3a3a4a; }
+
+    /* Icon-only social buttons */
+    .btn-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 38px;
+      padding: 0;
+      border-radius: 8px;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      text-decoration: none;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+    .btn-icon svg { display: block; }
+    .btn-icon:hover { border-color: #3a3a4a; color: var(--text); }
+    .btn-icon-github:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+    .btn-icon-linkedin:hover { color: #0A66C2; border-color: rgba(10,102,194,0.5); }
+    .btn-icon-medium:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
 
     .section-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-light); margin-bottom: 0.6rem; }
     h2 { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 2.25rem; }
@@ -54,7 +76,6 @@
     .exp-card { border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
     .exp-card-purple { background: rgba(124,106,247,0.05); border-color: rgba(124,106,247,0.2); border-left: 4px solid var(--accent); }
     .exp-card-teal { background: rgba(29,158,117,0.05); border-color: rgba(29,158,117,0.2); border-left: 4px solid #1D9E75; }
-    /* ── NEW: Education card colour variants ── */
     .exp-card-blue { background: rgba(55,138,221,0.05); border-color: rgba(55,138,221,0.2); border-left: 4px solid #378ADD; }
     .exp-card-amber { background: rgba(186,117,23,0.06); border-color: rgba(186,117,23,0.2); border-left: 4px solid #BA7517; }
 
@@ -77,7 +98,6 @@
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    /* ── Projects: single-column full-width like experience cards ── */
     .projects-grid {
       display: flex;
       flex-direction: column;
@@ -132,7 +152,6 @@
 
     .achievement-card { background: rgba(124,106,247,0.06); border: 1px solid rgba(124,106,247,0.2); border-left: 4px solid var(--accent); border-radius: 12px; padding: 1.5rem; }
 
-    /* ── Skills (tiered layout) ── */
     .skills-tier-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -246,9 +265,27 @@
       <p class="hero-bio">I build agentic AI systems that reason, act, and deliver from multi-agent pipelines to RAG-powered solutions.</p>
       <div class="hero-links">
         <a href="#projects" class="btn btn-primary">View Projects →</a>
-        <a href="https://github.com/tulika105" target="_blank" class="btn btn-ghost">GitHub</a>
-        <a href="https://www.linkedin.com/in/tulika-das-7746aa291/" target="_blank" class="btn btn-ghost">LinkedIn</a>
-        <a href="https://medium.com/@tulika.das105" target="_blank" class="btn btn-ghost">Medium</a>
+
+        <!-- GitHub icon button -->
+        <a href="https://github.com/tulika105" target="_blank" class="btn-icon btn-icon-github" aria-label="GitHub" title="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+          </svg>
+        </a>
+
+        <!-- LinkedIn icon button -->
+        <a href="https://www.linkedin.com/in/tulika-das-7746aa291/" target="_blank" class="btn-icon btn-icon-linkedin" aria-label="LinkedIn" title="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+
+        <!-- Medium icon button -->
+        <a href="https://medium.com/@tulika.das105" target="_blank" class="btn-icon btn-icon-medium" aria-label="Medium" title="Medium">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+          </svg>
+        </a>
       </div>
     </div>
     <img src="https://avatars.githubusercontent.com/u/159255355?v=4" alt="Tulika Das" class="hero-photo">
@@ -262,7 +299,7 @@
   <p class="section-label">About</p>
   <h2>About Me</h2>
   <div class="about-text">
-    <p>Based in India with a deep focus on large language models, retrieval-augmented generation, and agentic AI systems. I enjoy the full arc of building from designing pipelines and evaluating models to shipping clean, working code.</p>
+    <p>Based in India with a deep focus on large language models, retrieval-augmented generation, and agentic AI systems. I enjoy the full arc of building — from designing pipelines and evaluating models to shipping clean, working code.</p>
     <p>My recent work spans scalable LLM backends, memory-based agents, hybrid RAG systems, and AI safety tools. I care about building things that are not just technically interesting but genuinely useful.</p>
   </div>
 </section>
@@ -533,13 +570,12 @@
 
 <hr class="divider">
 
-<!-- Education — now with colour variants -->
+<!-- Education -->
 <section id="education">
   <p class="section-label">Education</p>
   <h2>Academic Background</h2>
   <div class="exp-list">
 
-    <!-- MSc — blue variant -->
     <div class="exp-card exp-card-blue">
       <div class="exp-header">
         <div>
@@ -550,7 +586,6 @@
       </div>
     </div>
 
-    <!-- BSc — amber variant -->
     <div class="exp-card exp-card-amber">
       <div class="exp-header">
         <div>
@@ -628,6 +663,7 @@
   sections.forEach(s => navObserver.observe(s));
 
   const bioEl = document.querySelector('.hero-bio');
+  const cursor = document.querySelector('.typing-cursor');
   const bioText = bioEl.textContent;
   bioEl.textContent = '';
   bioEl.style.minHeight = '3rem';
@@ -636,6 +672,11 @@
     if (i < bioText.length) {
       bioEl.textContent += bioText[i++];
       setTimeout(typeChar, 18);
+    } else {
+      cursor.style.transition = 'opacity 0.6s ease';
+      cursor.style.animation = 'none';
+      cursor.style.opacity = '1';
+      setTimeout(() => { cursor.style.opacity = '0'; }, 800);
     }
   }
   setTimeout(typeChar, 600);
