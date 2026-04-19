@@ -29,8 +29,35 @@
 
     section { max-width: 760px; margin: 0 auto; padding: 5rem 2rem; }
 
-    #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 80px; }
-    .hero-content { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding-top: 80px;
+    }
+
+    /* Canvas for 3D balls — fixed, full page */
+    #balls-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Make sure all page content sits above canvas */
+    nav { z-index: 100; }
+    section { position: relative; z-index: 1; }
+    footer { position: relative; z-index: 1; }
+    hr.divider { position: relative; z-index: 1; }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 2rem; flex-wrap: wrap;
+    }
     .hero-text { flex: 1; min-width: 280px; }
     .hero-photo { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(124,106,247,0.4); flex-shrink: 0; }
     .tag { display: inline-block; font-size: 0.7rem; color: var(--accent-light); background: rgba(124,106,247,0.1); border: 1px solid rgba(124,106,247,0.25); border-radius: 999px; padding: 0.25rem 0.8rem; margin-bottom: 1.5rem; letter-spacing: 0.06em; text-transform: uppercase; }
@@ -44,21 +71,11 @@
     .btn-ghost { background: transparent; color: var(--muted); border: 1px solid var(--border); }
     .btn-ghost:hover { color: var(--text); border-color: #3a3a4a; }
 
-    /* Icon-only social buttons */
     .btn-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 54px;
-      height: 38px;
-      padding: 0;
-      border-radius: 8px;
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      text-decoration: none;
-      transition: all 0.2s;
-      flex-shrink: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 54px; height: 38px; padding: 0; border-radius: 8px;
+      background: transparent; border: 1px solid var(--border);
+      color: var(--muted); text-decoration: none; transition: all 0.2s; flex-shrink: 0;
     }
     .btn-icon svg { display: block; }
     .btn-icon:hover { border-color: #3a3a4a; color: var(--text); }
@@ -98,12 +115,7 @@
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    .projects-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
+    .projects-grid { display: flex; flex-direction: column; gap: 1.5rem; }
     .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; gap: 1rem; color: inherit; }
     .project-card:hover { border-color: rgba(124,106,247,0.35); transform: translateY(-2px); }
     .project-card-purple { background: rgba(124,106,247,0.04); border-color: rgba(124,106,247,0.2); border-left: 4px solid var(--accent); }
@@ -111,10 +123,9 @@
     .project-card-coral  { background: rgba(216,90,48,0.04);   border-color: rgba(216,90,48,0.2);   border-left: 4px solid #D85A30; }
     .project-card-blue   { background: rgba(55,138,221,0.04);  border-color: rgba(55,138,221,0.2);  border-left: 4px solid #378ADD; }
     .project-card-amber  { background: rgba(186,117,23,0.05);  border-color: rgba(186,117,23,0.2);  border-left: 4px solid #BA7517; }
-    .project-card-inner { display: flex; flex-direction: column; flex: 1; min-width: 0; }
     .project-thumb { width: 100%; height: 220px; object-fit: cover; object-position: center top; border-radius: 8px; filter: brightness(0.92); flex-shrink: 0; display: block; }
     .project-name { font-weight: 600; font-size: 0.9rem; color: var(--text); margin-bottom: 0.5rem; }
-    .project-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.75rem; flex-grow: 1; }
+    .project-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.75rem; flex-grow: 1; }
     .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .pill { font-size: 0.65rem; padding: 0.15rem 0.55rem; border-radius: 999px; background: rgba(124,106,247,0.07); color: var(--accent-light); border: 1px solid rgba(124,106,247,0.18); }
     .project-result { display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.75rem; margin-bottom: 0.75rem; padding: 0.5rem 0.75rem; border-left: 3px solid; border-radius: 0 6px 6px 0; }
@@ -152,54 +163,18 @@
 
     .achievement-card { background: rgba(124,106,247,0.06); border: 1px solid rgba(124,106,247,0.2); border-left: 4px solid var(--accent); border-radius: 12px; padding: 1.5rem; }
 
-    .skills-tier-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1rem;
-    }
-    .skills-tier-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.25rem 1.4rem;
-      transition: border-color 0.2s;
-    }
+    .skills-tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; }
+    .skills-tier-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.4rem; transition: border-color 0.2s; }
     .skills-tier-card:hover { border-color: rgba(124,106,247,0.25); }
-    .skills-tier-header {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 1rem;
-    }
-    .tier-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
+    .skills-tier-header { display: flex; align-items: center; gap: 8px; margin-bottom: 1rem; }
+    .tier-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
     .tier-dot-purple { background: #7c6af7; }
     .tier-dot-teal   { background: #1D9E75; }
     .tier-dot-blue   { background: #378ADD; }
     .tier-dot-gray   { background: #5F5E5A; }
-    .skills-tier-title {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      font-weight: 700;
-    }
-    .skills-tier-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .skill-chip {
-      font-size: 0.78rem;
-      padding: 0.28rem 0.75rem;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      transition: border-color 0.2s, color 0.2s;
-      cursor: default;
-    }
+    .skills-tier-title { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 700; }
+    .skills-tier-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-chip { font-size: 0.78rem; padding: 0.28rem 0.75rem; border-radius: 8px; border: 1px solid var(--border); transition: border-color 0.2s, color 0.2s; cursor: default; }
     .skill-chip:hover { border-color: rgba(124,106,247,0.5); color: var(--accent-light); }
     .chip-purple { background: rgba(124,106,247,0.08); color: #a89cf7; border-color: rgba(124,106,247,0.2); }
     .chip-teal   { background: rgba(29,158,117,0.08); color: #5DCAA5; border-color: rgba(29,158,117,0.2); }
@@ -256,6 +231,9 @@
   </ul>
 </nav>
 
+<!-- Full-page floating balls canvas -->
+<canvas id="balls-canvas"></canvas>
+
 <!-- Hero -->
 <section id="hero">
   <div class="hero-content">
@@ -265,26 +243,14 @@
       <p class="hero-bio">I build agentic AI systems that reason, act, and deliver from multi-agent pipelines to RAG-powered solutions.</p>
       <div class="hero-links">
         <a href="#projects" class="btn btn-primary">View Projects →</a>
-
-        <!-- GitHub icon button -->
         <a href="https://github.com/tulika105" target="_blank" class="btn-icon btn-icon-github" aria-label="GitHub" title="GitHub">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-          </svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
         </a>
-
-        <!-- LinkedIn icon button -->
         <a href="https://www.linkedin.com/in/tulika-das-7746aa291/" target="_blank" class="btn-icon btn-icon-linkedin" aria-label="LinkedIn" title="LinkedIn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
-
-        <!-- Medium icon button -->
         <a href="https://medium.com/@tulika.das105" target="_blank" class="btn-icon btn-icon-medium" aria-label="Medium" title="Medium">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
-          </svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
         </a>
       </div>
     </div>
@@ -300,7 +266,7 @@
   <h2>About Me</h2>
   <div class="about-text">
     <p>Based in India with a deep focus on large language models, retrieval-augmented generation, and agentic AI systems. I enjoy the full arc of building — from designing pipelines and evaluating models to shipping clean, working code.</p>
-    <p>My recent work spans scalable LLM backends, memory-based agents, hybrid RAG systems, and AI safety tools. I care about building things that are not just technically interesting but genuinely useful.</p>
+    <p>My recent work spans scalable LLM backends, memory-based systems, hybrid RAG systems, and AI safety tools. I care about building things that are not just technically interesting but genuinely useful.</p>
   </div>
 </section>
 
@@ -468,76 +434,35 @@
 
 <hr class="divider">
 
-<!-- Skills (tiered) -->
+<!-- Skills -->
 <section id="skills">
   <p class="section-label">Skills</p>
   <h2>What I work with</h2>
-
   <div class="skills-tier-grid">
-
     <div class="skills-tier-card">
-      <div class="skills-tier-header">
-        <span class="tier-dot tier-dot-purple"></span>
-        <span class="skills-tier-title">Core stack</span>
-      </div>
+      <div class="skills-tier-header"><span class="tier-dot tier-dot-purple"></span><span class="skills-tier-title">Core stack</span></div>
       <div class="skills-tier-chips">
-        <span class="skill-chip chip-purple">Python</span>
-        <span class="skill-chip chip-purple">LangChain</span>
-        <span class="skill-chip chip-purple">LangGraph</span>
-        <span class="skill-chip chip-purple">FastAPI</span>
-        <span class="skill-chip chip-purple">Prompt Engineering</span>
-        <span class="skill-chip chip-purple">Agentic AI</span>
-        <span class="skill-chip chip-purple">Multi-agent Systems</span>
+        <span class="skill-chip chip-purple">Python</span><span class="skill-chip chip-purple">LangChain</span><span class="skill-chip chip-purple">LangGraph</span><span class="skill-chip chip-purple">FastAPI</span><span class="skill-chip chip-purple">Prompt Engineering</span><span class="skill-chip chip-purple">Agentic AI</span><span class="skill-chip chip-purple">Multi-agent Systems</span>
       </div>
     </div>
-
     <div class="skills-tier-card">
-      <div class="skills-tier-header">
-        <span class="tier-dot tier-dot-teal"></span>
-        <span class="skills-tier-title">LLM & Retrieval</span>
-      </div>
+      <div class="skills-tier-header"><span class="tier-dot tier-dot-teal"></span><span class="skills-tier-title">LLM & Retrieval</span></div>
       <div class="skills-tier-chips">
-        <span class="skill-chip chip-teal">RAG</span>
-        <span class="skill-chip chip-teal">RAGAS</span>
-        <span class="skill-chip chip-teal">Evals</span>
-        <span class="skill-chip chip-teal">ChromaDB</span>
-        <span class="skill-chip chip-teal">FAISS</span>
-        <span class="skill-chip chip-teal">HuggingFace</span>
-        <span class="skill-chip chip-teal">Llama 3</span>
-        <span class="skill-chip chip-teal">Gemini</span>
-        <span class="skill-chip chip-teal">Groq</span>
+        <span class="skill-chip chip-teal">RAG</span><span class="skill-chip chip-teal">RAGAS</span><span class="skill-chip chip-teal">Evals</span><span class="skill-chip chip-teal">ChromaDB</span><span class="skill-chip chip-teal">FAISS</span><span class="skill-chip chip-teal">HuggingFace</span><span class="skill-chip chip-teal">Llama 3</span><span class="skill-chip chip-teal">Gemini</span><span class="skill-chip chip-teal">Groq</span>
       </div>
     </div>
-
     <div class="skills-tier-card">
-      <div class="skills-tier-header">
-        <span class="tier-dot tier-dot-blue"></span>
-        <span class="skills-tier-title">Dev & Deployment</span>
-      </div>
+      <div class="skills-tier-header"><span class="tier-dot tier-dot-blue"></span><span class="skills-tier-title">Dev & Deployment</span></div>
       <div class="skills-tier-chips">
-        <span class="skill-chip chip-blue">Gradio</span>
-        <span class="skill-chip chip-blue">Streamlit</span>
-        <span class="skill-chip chip-blue">HuggingFace Spaces</span>
-        <span class="skill-chip chip-blue">GitHub Actions</span>
-        <span class="skill-chip chip-blue">Git</span>
-        <span class="skill-chip chip-blue">Token Cost Tracking</span>
+        <span class="skill-chip chip-blue">Gradio</span><span class="skill-chip chip-blue">Streamlit</span><span class="skill-chip chip-blue">HuggingFace Spaces</span><span class="skill-chip chip-blue">GitHub Actions</span><span class="skill-chip chip-blue">Git</span><span class="skill-chip chip-blue">Token Cost Tracking</span>
       </div>
     </div>
-
     <div class="skills-tier-card">
-      <div class="skills-tier-header">
-        <span class="tier-dot tier-dot-gray"></span>
-        <span class="skills-tier-title">Familiar with</span>
-      </div>
+      <div class="skills-tier-header"><span class="tier-dot tier-dot-gray"></span><span class="skills-tier-title">ML Foundations</span></div>
       <div class="skills-tier-chips">
-        <span class="skill-chip chip-gray">Scikit-learn</span>
-        <span class="skill-chip chip-gray">TensorFlow</span>
-        <span class="skill-chip chip-gray">Pandas</span>
-        <span class="skill-chip chip-gray">NumPy</span>
-        <span class="skill-chip chip-gray">NLP</span>
+        <span class="skill-chip chip-gray">Scikit-learn</span><span class="skill-chip chip-gray">TensorFlow</span><span class="skill-chip chip-gray">Pandas</span><span class="skill-chip chip-gray">NumPy</span><span class="skill-chip chip-gray">NLP</span>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -548,7 +473,6 @@
   <p class="section-label">Writing</p>
   <h2>Blogs</h2>
   <div class="blog-grid">
-
     <div class="blog-card blog-card-teal fade-in">
       <p class="blog-tag blog-tag-teal">RAG · Evaluation · RAGAS</p>
       <p class="blog-title">My RAG Pipeline Looked Fine Until I Measured It</p>
@@ -556,15 +480,13 @@
       <p class="blog-meta">5 min read · Medium</p>
       <a href="https://medium.com/@tulika.das105/my-rag-pipeline-looked-fine-until-i-measured-it-8631a28a9f68" target="_blank" class="btn btn-teal" style="font-size:0.78rem;">Read Article →</a>
     </div>
-
     <div class="blog-card blog-card-purple fade-in">
       <p class="blog-tag blog-tag-purple">LangGraph · Multi-Agent · Production</p>
-      <p class="blog-title">From Prototype to Production: Building a Multi-Agent Complaint System with LangGraph</p>
+      <p class="blog-title">LangGraph is the Easy Part. Here's the Hard 80%.</p>
       <p class="blog-excerpt">Getting it to work locally was just the first step. This is what it actually takes to ship a multi-agent complaint routing system into the real world.</p>
       <p class="blog-meta">5 min read · Medium</p>
       <a href="https://medium.com/@tulika.das105/from-prototype-to-production-building-a-multi-agent-complaint-system-with-langgraph-4d06b499a7b9" target="_blank" class="btn btn-primary" style="font-size:0.78rem;">Read Article →</a>
     </div>
-
   </div>
 </section>
 
@@ -575,7 +497,6 @@
   <p class="section-label">Education</p>
   <h2>Academic Background</h2>
   <div class="exp-list">
-
     <div class="exp-card exp-card-blue">
       <div class="exp-header">
         <div>
@@ -585,7 +506,6 @@
         <span class="exp-date exp-date-blue">Sept 2023 – June 2025</span>
       </div>
     </div>
-
     <div class="exp-card exp-card-amber">
       <div class="exp-header">
         <div>
@@ -595,7 +515,6 @@
         <span class="exp-date exp-date-amber">Aug 2019 – July 2022</span>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -638,17 +557,121 @@
 </footer>
 
 <script>
+  /* ── Floating 3D Balls (full page, fixed) ── */
+  (function () {
+    const canvas = document.getElementById('balls-canvas');
+    const ctx = canvas.getContext('2d');
+
+    const COLORS = [
+      { base: 'rgba(124,106,247,', specular: 'rgba(200,190,255,' },
+      { base: 'rgba(29,158,117,',  specular: 'rgba(120,230,190,' },
+      { base: 'rgba(168,156,247,', specular: 'rgba(220,215,255,' },
+      { base: 'rgba(55,138,221,',  specular: 'rgba(140,200,255,' },
+      { base: 'rgba(93,202,165,',  specular: 'rgba(180,240,220,' },
+    ];
+
+    let W, H;
+    function resize() {
+      W = canvas.width  = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    function rand(a, b) { return a + Math.random() * (b - a); }
+
+    const BALL_COUNT = 25;
+    const balls = [];
+
+    for (let i = 0; i < BALL_COUNT; i++) {
+      const r = rand(2, 6);
+      const colorSet = COLORS[Math.floor(Math.random() * COLORS.length)];
+      balls.push({
+        x: rand(r, W - r),
+        y: rand(r, H - r),
+        r,
+        vx: rand(-0.22, 0.22),
+        vy: rand(-0.16, 0.16),
+        alpha: rand(0.10, 0.28),
+        colorSet,
+        phase: rand(0, Math.PI * 2),
+        phaseSpeed: rand(0.003, 0.009),
+      });
+    }
+
+    function drawBall(b) {
+      const { x, y, r, alpha, colorSet } = b;
+
+      const glow = ctx.createRadialGradient(x, y, r * 0.4, x, y, r * 1.8);
+      glow.addColorStop(0, colorSet.base + (alpha * 0.15) + ')');
+      glow.addColorStop(1, colorSet.base + '0)');
+      ctx.beginPath();
+      ctx.arc(x, y, r * 1.8, 0, Math.PI * 2);
+      ctx.fillStyle = glow;
+      ctx.fill();
+
+      const grad = ctx.createRadialGradient(
+        x - r * 0.35, y - r * 0.35, r * 0.04,
+        x, y, r
+      );
+      grad.addColorStop(0,   colorSet.base + (alpha * 1.0) + ')');
+      grad.addColorStop(0.5, colorSet.base + (alpha * 0.65) + ')');
+      grad.addColorStop(1,   colorSet.base + (alpha * 0.12) + ')');
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, Math.PI * 2);
+      ctx.fillStyle = grad;
+      ctx.fill();
+
+      const spec = ctx.createRadialGradient(
+        x - r * 0.3, y - r * 0.3, 0,
+        x - r * 0.26, y - r * 0.26, r * 0.4
+      );
+      spec.addColorStop(0,   colorSet.specular + Math.min(alpha * 1.5, 0.55).toFixed(2) + ')');
+      spec.addColorStop(0.5, colorSet.specular + (alpha * 0.25).toFixed(2) + ')');
+      spec.addColorStop(1,   colorSet.specular + '0)');
+      ctx.beginPath();
+      ctx.arc(x - r * 0.26, y - r * 0.26, r * 0.4, 0, Math.PI * 2);
+      ctx.fillStyle = spec;
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, Math.PI * 2);
+      ctx.strokeStyle = colorSet.base + (alpha * 0.4) + ')';
+      ctx.lineWidth = 0.5;
+      ctx.stroke();
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, W, H);
+      for (const b of balls) {
+        b.phase += b.phaseSpeed;
+        b.x += b.vx + Math.sin(b.phase) * 0.1;
+        b.y += b.vy + Math.cos(b.phase * 0.7) * 0.08;
+        if (b.x - b.r < 0)  { b.x = b.r;      b.vx = Math.abs(b.vx); }
+        if (b.x + b.r > W)  { b.x = W - b.r;  b.vx = -Math.abs(b.vx); }
+        if (b.y - b.r < 0)  { b.y = b.r;      b.vy = Math.abs(b.vy); }
+        if (b.y + b.r > H)  { b.y = H - b.r;  b.vy = -Math.abs(b.vy); }
+        drawBall(b);
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+  })();
+
+  /* ── Fade-in on scroll ── */
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+  /* ── Scroll progress bar ── */
   const bar = document.getElementById('progress-bar');
   window.addEventListener('scroll', () => {
     const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
     bar.style.width = pct + '%';
   });
 
+  /* ── Active nav link ── */
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   const navObserver = new IntersectionObserver(entries => {
@@ -662,6 +685,7 @@
   }, { threshold: 0.4 });
   sections.forEach(s => navObserver.observe(s));
 
+  /* ── Typing animation ── */
   const bioEl = document.querySelector('.hero-bio');
   const cursor = document.querySelector('.typing-cursor');
   const bioText = bioEl.textContent;
