@@ -29,35 +29,16 @@
 
     section { max-width: 760px; margin: 0 auto; padding: 5rem 2rem; }
 
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column; justify-content: center;
-      padding-top: 80px;
-    }
+    #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 80px; }
 
-    /* Canvas for 3D balls — fixed, full page */
-    #balls-canvas {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 0;
-    }
+    #balls-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 0; }
 
-    /* Make sure all page content sits above canvas */
     nav { z-index: 100; }
     section { position: relative; z-index: 1; }
     footer { position: relative; z-index: 1; }
     hr.divider { position: relative; z-index: 1; }
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 2rem; flex-wrap: wrap;
-    }
+    .hero-content { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
     .hero-text { flex: 1; min-width: 280px; }
     .hero-photo { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(124,106,247,0.4); flex-shrink: 0; }
     .tag { display: inline-block; font-size: 0.7rem; color: var(--accent-light); background: rgba(124,106,247,0.1); border: 1px solid rgba(124,106,247,0.25); border-radius: 999px; padding: 0.25rem 0.8rem; margin-bottom: 1.5rem; letter-spacing: 0.06em; text-transform: uppercase; }
@@ -70,13 +51,7 @@
     .btn-primary:hover { background: var(--accent-light); border-color: var(--accent-light); }
     .btn-ghost { background: transparent; color: var(--muted); border: 1px solid var(--border); }
     .btn-ghost:hover { color: var(--text); border-color: #3a3a4a; }
-
-    .btn-icon {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 54px; height: 38px; padding: 0; border-radius: 8px;
-      background: transparent; border: 1px solid var(--border);
-      color: var(--muted); text-decoration: none; transition: all 0.2s; flex-shrink: 0;
-    }
+    .btn-icon { display: inline-flex; align-items: center; justify-content: center; width: 54px; height: 38px; padding: 0; border-radius: 8px; background: transparent; border: 1px solid var(--border); color: var(--muted); text-decoration: none; transition: all 0.2s; flex-shrink: 0; }
     .btn-icon svg { display: block; }
     .btn-icon:hover { border-color: #3a3a4a; color: var(--text); }
     .btn-icon-github:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
@@ -95,18 +70,16 @@
     .exp-card-teal { background: rgba(29,158,117,0.05); border-color: rgba(29,158,117,0.2); border-left: 4px solid #1D9E75; }
     .exp-card-blue { background: rgba(55,138,221,0.05); border-color: rgba(55,138,221,0.2); border-left: 4px solid #378ADD; }
     .exp-card-amber { background: rgba(186,117,23,0.06); border-color: rgba(186,117,23,0.2); border-left: 4px solid #BA7517; }
-
     .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
     .exp-role { font-weight: 600; font-size: 0.975rem; color: var(--text); }
     .exp-company { font-size: 0.82rem; color: var(--accent-light); margin-top: 0.2rem; }
-    .exp-company-teal  { color: #5DCAA5; }
-    .exp-company-blue  { color: #85B7EB; }
+    .exp-company-teal { color: #5DCAA5; }
+    .exp-company-blue { color: #85B7EB; }
     .exp-company-amber { color: #FAC775; }
     .exp-date { font-size: 0.75rem; color: var(--muted); background: rgba(124,106,247,0.07); border: 1px solid rgba(124,106,247,0.18); padding: 0.2rem 0.7rem; border-radius: 999px; white-space: nowrap; }
-    .exp-date-teal  { background: rgba(29,158,117,0.07);  border-color: rgba(29,158,117,0.2); }
-    .exp-date-blue  { background: rgba(55,138,221,0.07);  border-color: rgba(55,138,221,0.2); }
-    .exp-date-amber { background: rgba(186,117,23,0.08);  border-color: rgba(186,117,23,0.25); }
-    .exp-para { font-size: 0.84rem; color: var(--muted); line-height: 1.75; }
+    .exp-date-teal { background: rgba(29,158,117,0.07); border-color: rgba(29,158,117,0.2); }
+    .exp-date-blue { background: rgba(55,138,221,0.07); border-color: rgba(55,138,221,0.2); }
+    .exp-date-amber { background: rgba(186,117,23,0.08); border-color: rgba(186,117,23,0.25); }
     .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
     .exp-bullets li { font-size: 0.84rem; color: var(--muted); line-height: 1.65; padding-left: 1rem; position: relative; }
     .exp-bullets li::before { content: "·"; position: absolute; left: 0; color: var(--accent-light); font-size: 1.2rem; line-height: 1.2; }
@@ -119,10 +92,10 @@
     .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; gap: 1rem; color: inherit; }
     .project-card:hover { border-color: rgba(124,106,247,0.35); transform: translateY(-2px); }
     .project-card-purple { background: rgba(124,106,247,0.04); border-color: rgba(124,106,247,0.2); border-left: 4px solid var(--accent); }
-    .project-card-teal   { background: rgba(29,158,117,0.04);  border-color: rgba(29,158,117,0.2);  border-left: 4px solid #1D9E75; }
-    .project-card-coral  { background: rgba(216,90,48,0.04);   border-color: rgba(216,90,48,0.2);   border-left: 4px solid #D85A30; }
-    .project-card-blue   { background: rgba(55,138,221,0.04);  border-color: rgba(55,138,221,0.2);  border-left: 4px solid #378ADD; }
-    .project-card-amber  { background: rgba(186,117,23,0.05);  border-color: rgba(186,117,23,0.2);  border-left: 4px solid #BA7517; }
+    .project-card-teal { background: rgba(29,158,117,0.04); border-color: rgba(29,158,117,0.2); border-left: 4px solid #1D9E75; }
+    .project-card-coral { background: rgba(216,90,48,0.04); border-color: rgba(216,90,48,0.2); border-left: 4px solid #D85A30; }
+    .project-card-blue { background: rgba(55,138,221,0.04); border-color: rgba(55,138,221,0.2); border-left: 4px solid #378ADD; }
+    .project-card-amber { background: rgba(186,117,23,0.05); border-color: rgba(186,117,23,0.2); border-left: 4px solid #BA7517; }
     .project-thumb { width: 100%; height: 220px; object-fit: cover; object-position: center top; border-radius: 8px; filter: brightness(0.92); flex-shrink: 0; display: block; }
     .project-name { font-weight: 600; font-size: 0.9rem; color: var(--text); margin-bottom: 0.5rem; }
     .project-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.75rem; flex-grow: 1; }
@@ -169,17 +142,17 @@
     .skills-tier-header { display: flex; align-items: center; gap: 8px; margin-bottom: 1rem; }
     .tier-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
     .tier-dot-purple { background: #7c6af7; }
-    .tier-dot-teal   { background: #1D9E75; }
-    .tier-dot-blue   { background: #378ADD; }
-    .tier-dot-gray   { background: #5F5E5A; }
+    .tier-dot-teal { background: #1D9E75; }
+    .tier-dot-blue { background: #378ADD; }
+    .tier-dot-gray { background: #5F5E5A; }
     .skills-tier-title { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 700; }
     .skills-tier-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .skill-chip { font-size: 0.78rem; padding: 0.28rem 0.75rem; border-radius: 8px; border: 1px solid var(--border); transition: border-color 0.2s, color 0.2s; cursor: default; }
     .skill-chip:hover { border-color: rgba(124,106,247,0.5); color: var(--accent-light); }
     .chip-purple { background: rgba(124,106,247,0.08); color: #a89cf7; border-color: rgba(124,106,247,0.2); }
-    .chip-teal   { background: rgba(29,158,117,0.08); color: #5DCAA5; border-color: rgba(29,158,117,0.2); }
-    .chip-blue   { background: rgba(55,138,221,0.08); color: #85B7EB; border-color: rgba(55,138,221,0.2); }
-    .chip-gray   { background: rgba(95,94,90,0.12);   color: var(--muted); border-color: rgba(95,94,90,0.25); }
+    .chip-teal { background: rgba(29,158,117,0.08); color: #5DCAA5; border-color: rgba(29,158,117,0.2); }
+    .chip-blue { background: rgba(55,138,221,0.08); color: #85B7EB; border-color: rgba(55,138,221,0.2); }
+    .chip-gray { background: rgba(95,94,90,0.12); color: var(--muted); border-color: rgba(95,94,90,0.25); }
 
     .contact-top { margin-bottom: 1.5rem; }
     .contact-link { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.2rem; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; border: 1px solid; border-left: 4px solid; }
@@ -231,7 +204,6 @@
   </ul>
 </nav>
 
-<!-- Full-page floating balls canvas -->
 <canvas id="balls-canvas"></canvas>
 
 <!-- Hero -->
@@ -243,13 +215,13 @@
       <p class="hero-bio">I build agentic AI systems that reason, act, and deliver from multi-agent pipelines to RAG-powered solutions.</p>
       <div class="hero-links">
         <a href="#projects" class="btn btn-primary">View Projects →</a>
-        <a href="https://github.com/tulika105" target="_blank" class="btn-icon btn-icon-github" aria-label="GitHub" title="GitHub">
+        <a href="https://github.com/tulika105" target="_blank" class="btn-icon btn-icon-github" aria-label="GitHub">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
         </a>
-        <a href="https://www.linkedin.com/in/tulika-das-7746aa291/" target="_blank" class="btn-icon btn-icon-linkedin" aria-label="LinkedIn" title="LinkedIn">
+        <a href="https://www.linkedin.com/in/tulika-das-7746aa291/" target="_blank" class="btn-icon btn-icon-linkedin" aria-label="LinkedIn">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
-        <a href="https://medium.com/@tulika.das105" target="_blank" class="btn-icon btn-icon-medium" aria-label="Medium" title="Medium">
+        <a href="https://medium.com/@tulika.das105" target="_blank" class="btn-icon btn-icon-medium" aria-label="Medium">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
         </a>
       </div>
@@ -265,7 +237,7 @@
   <p class="section-label">About</p>
   <h2>About Me</h2>
   <div class="about-text">
-    <p>Based in India with a deep focus on large language models, retrieval-augmented generation, and agentic AI systems. I enjoy the full arc of building — from designing pipelines and evaluating models to shipping clean, working code.</p>
+    <p>Based in India with a deep focus on large language models, retrieval-augmented generation, and agentic AI systems. I enjoy the full arc of building from designing pipelines and evaluating models to shipping clean, working code.</p>
     <p>My recent work spans scalable LLM backends, memory-based systems, hybrid RAG systems, and AI safety tools. I care about building things that are not just technically interesting but genuinely useful.</p>
   </div>
 </section>
@@ -285,7 +257,7 @@
         <strong style="color:var(--text)">Problem:</strong> Customer support teams struggle with high complaint volumes, mixing urgent issues with trivial queries and causing missed escalations.<br><br>
         <strong style="color:var(--text)">Solution:</strong> Built a multi-agent system using LangGraph, Llama-3, and Gemini that auto-routes complaints by urgency, loops in human managers for high-severity cases, and sends automated email resolutions.
       </p>
-      <div class="project-result result-purple"><span class="project-result-label">Result</span><span class="project-result-text">Critical complaints reach managers automatically, with no manual sorting needed.</span></div>
+      <div class="project-result result-purple"><span class="project-result-label">Result</span><span class="project-result-text">Urgent complaints are no longer buried in a queue — the system routes, escalates, and resolves without a human in the loop for every ticket.</span></div>
       <div class="project-tags"><span class="pill">LangGraph</span><span class="pill">LLaMA-3</span><span class="pill">Gemini</span><span class="pill">HITL</span><span class="pill">Python</span></div>
       <div class="project-actions">
         <a href="https://github.com/tulika105/Multi-Agent-Complaint-System" target="_blank" class="btn btn-primary">
@@ -303,7 +275,7 @@
         <strong style="color:var(--text)">Problem:</strong> Manual research is slow and fragmented. Searching multiple queries, reading articles, and synthesizing findings takes hours.<br><br>
         <strong style="color:var(--text)">Solution:</strong> Built a ReAct agent using LangGraph and Groq that autonomously searches DuckDuckGo across multiple angles and compiles findings into a structured 6-section research report.
       </p>
-      <div class="project-result result-teal"><span class="project-result-label">Result</span><span class="project-result-text">One prompt produces a full, structured research report in seconds.</span></div>
+      <div class="project-result result-teal"><span class="project-result-label">Result</span><span class="project-result-text">What used to take hours of reading and note-taking now produces a structured, multi-angle report from a single prompt.</span></div>
       <div class="project-tags"><span class="pill">LangGraph</span><span class="pill">Groq</span><span class="pill">ReAct</span><span class="pill">Python</span></div>
       <div class="project-actions">
         <a href="https://github.com/tulika105/Research-Agent" target="_blank" class="btn btn-primary">
@@ -339,7 +311,7 @@
         <strong style="color:var(--text)">Problem:</strong> Deploying LLMs in production requires more than API calls, teams need rate limiting, cost control, auth, and fallback logic to run reliably at scale.<br><br>
         <strong style="color:var(--text)">Solution:</strong> Built a scalable LLM backend using FastAPI with authentication, per-user rate limiting, token cost accounting, and provider fallback logic.
       </p>
-      <div class="project-result result-blue"><span class="project-result-label">Result</span><span class="project-result-text">A drop-in backend that handles auth, abuse prevention, cost tracking, and failover out of the box.</span></div>
+      <div class="project-result result-blue"><span class="project-result-label">Result</span><span class="project-result-text">A backend that handles the unglamorous but critical parts of LLM deployment — so engineers can focus on building features instead of fighting infrastructure.</span></div>
       <div class="project-tags"><span class="pill">FastAPI</span><span class="pill">LLM</span><span class="pill">Python</span><span class="pill">System Design</span></div>
       <div class="project-actions">
         <a href="https://github.com/tulika105/LLM-System-Design" target="_blank" class="btn btn-primary">
@@ -357,7 +329,7 @@
         <strong style="color:var(--text)">Problem:</strong> Most LangChain tutorials treat memory as a black box, leaving developers confused about what actually persists and what gets lost between sessions.<br><br>
         <strong style="color:var(--text)">Solution:</strong> Built a focused system demonstrating both memory types: in-memory short-term context via LangChain and JSON-based long-term persistent storage, with daily reminders via GitHub Actions to log learnings.
       </p>
-      <div class="project-result result-amber"><span class="project-result-label">Result</span><span class="project-result-text">A clear, working reference for how memory behaves in LangChain, with session context and persistent recall made fully observable.</span></div>
+      <div class="project-result result-amber"><span class="project-result-label">Result</span><span class="project-result-text">Memory in LangChain stops being a black box — both session context and persistent recall are fully observable and easy to reason about.</span></div>
       <div class="project-tags"><span class="pill">LangChain</span><span class="pill">Memory</span><span class="pill">GitHub Actions</span><span class="pill">Python</span></div>
       <div class="project-actions">
         <a href="https://github.com/tulika105/Memory-AI-Agent" target="_blank" class="btn btn-primary">
@@ -426,7 +398,7 @@
       </div>
       <span class="exp-date">2025</span>
     </div>
-    <p class="project-desc" style="margin-bottom:1rem;">Built SheGuard, an AI-powered personal safety advisor for women, using LLaMA 3.3-70b, LangChain, and deployed on Hugging Face Spaces. Ranked in the <strong style="color:var(--text)">top 38 out of 671 entries</strong> in the Distinguished Social Impact Innovation category.</p>
+    <p class="project-desc" style="margin-bottom:1rem;">Built SheGuard, an AI-powered personal safety advisor for women, using LLaMA 3.3-70b, LangChain, and deployed on Hugging Face Spaces. Ranked in the <strong style="color:var(--text)">top 38 out of 674 entries</strong> in the Distinguished Social Impact Innovation category.</p>
     <div class="project-tags" style="margin-bottom:1rem;"><span class="pill">LLaMA</span><span class="pill">LangChain</span><span class="pill">Gradio</span><span class="pill">Ready Tensor</span></div>
     <a href="https://app.readytensor.ai/publications/sheguard-an-ai-powered-personal-safety-advisor-for-women-of-all-ages-nIHwyQJQ7bIR" target="_blank" class="btn btn-primary" style="font-size:0.78rem;">Read Publication</a>
   </div>
@@ -557,11 +529,9 @@
 </footer>
 
 <script>
-  /* ── Floating 3D Balls (full page, fixed) ── */
   (function () {
     const canvas = document.getElementById('balls-canvas');
     const ctx = canvas.getContext('2d');
-
     const COLORS = [
       { base: 'rgba(124,106,247,', specular: 'rgba(200,190,255,' },
       { base: 'rgba(29,158,117,',  specular: 'rgba(120,230,190,' },
@@ -569,88 +539,45 @@
       { base: 'rgba(55,138,221,',  specular: 'rgba(140,200,255,' },
       { base: 'rgba(93,202,165,',  specular: 'rgba(180,240,220,' },
     ];
-
     let W, H;
-    function resize() {
-      W = canvas.width  = window.innerWidth;
-      H = canvas.height = window.innerHeight;
-    }
+    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
     resize();
     window.addEventListener('resize', resize);
-
     function rand(a, b) { return a + Math.random() * (b - a); }
-
-    const BALL_COUNT = 25;
     const balls = [];
-
-    for (let i = 0; i < BALL_COUNT; i++) {
+    for (let i = 0; i < 25; i++) {
       const r = rand(2, 6);
-      const colorSet = COLORS[Math.floor(Math.random() * COLORS.length)];
-      balls.push({
-        x: rand(r, W - r),
-        y: rand(r, H - r),
-        r,
-        vx: rand(-0.22, 0.22),
-        vy: rand(-0.16, 0.16),
-        alpha: rand(0.10, 0.28),
-        colorSet,
-        phase: rand(0, Math.PI * 2),
-        phaseSpeed: rand(0.003, 0.009),
-      });
+      const c = COLORS[Math.floor(Math.random() * COLORS.length)];
+      balls.push({ x: rand(r, W-r), y: rand(r, H-r), r, vx: rand(-0.22,0.22), vy: rand(-0.16,0.16), alpha: rand(0.10,0.28), colorSet: c, phase: rand(0,Math.PI*2), phaseSpeed: rand(0.003,0.009) });
     }
-
     function drawBall(b) {
-      const { x, y, r, alpha, colorSet } = b;
-
-      const glow = ctx.createRadialGradient(x, y, r * 0.4, x, y, r * 1.8);
-      glow.addColorStop(0, colorSet.base + (alpha * 0.15) + ')');
-      glow.addColorStop(1, colorSet.base + '0)');
-      ctx.beginPath();
-      ctx.arc(x, y, r * 1.8, 0, Math.PI * 2);
-      ctx.fillStyle = glow;
-      ctx.fill();
-
-      const grad = ctx.createRadialGradient(
-        x - r * 0.35, y - r * 0.35, r * 0.04,
-        x, y, r
-      );
-      grad.addColorStop(0,   colorSet.base + (alpha * 1.0) + ')');
-      grad.addColorStop(0.5, colorSet.base + (alpha * 0.65) + ')');
-      grad.addColorStop(1,   colorSet.base + (alpha * 0.12) + ')');
-      ctx.beginPath();
-      ctx.arc(x, y, r, 0, Math.PI * 2);
-      ctx.fillStyle = grad;
-      ctx.fill();
-
-      const spec = ctx.createRadialGradient(
-        x - r * 0.3, y - r * 0.3, 0,
-        x - r * 0.26, y - r * 0.26, r * 0.4
-      );
-      spec.addColorStop(0,   colorSet.specular + Math.min(alpha * 1.5, 0.55).toFixed(2) + ')');
-      spec.addColorStop(0.5, colorSet.specular + (alpha * 0.25).toFixed(2) + ')');
-      spec.addColorStop(1,   colorSet.specular + '0)');
-      ctx.beginPath();
-      ctx.arc(x - r * 0.26, y - r * 0.26, r * 0.4, 0, Math.PI * 2);
-      ctx.fillStyle = spec;
-      ctx.fill();
-
-      ctx.beginPath();
-      ctx.arc(x, y, r, 0, Math.PI * 2);
-      ctx.strokeStyle = colorSet.base + (alpha * 0.4) + ')';
-      ctx.lineWidth = 0.5;
-      ctx.stroke();
+      const {x,y,r,alpha,colorSet} = b;
+      const glow = ctx.createRadialGradient(x,y,r*0.4,x,y,r*1.8);
+      glow.addColorStop(0, colorSet.base+(alpha*0.15)+')');
+      glow.addColorStop(1, colorSet.base+'0)');
+      ctx.beginPath(); ctx.arc(x,y,r*1.8,0,Math.PI*2); ctx.fillStyle=glow; ctx.fill();
+      const grad = ctx.createRadialGradient(x-r*0.35,y-r*0.35,r*0.04,x,y,r);
+      grad.addColorStop(0,colorSet.base+(alpha*1.0)+')');
+      grad.addColorStop(0.5,colorSet.base+(alpha*0.65)+')');
+      grad.addColorStop(1,colorSet.base+(alpha*0.12)+')');
+      ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.fillStyle=grad; ctx.fill();
+      const spec = ctx.createRadialGradient(x-r*0.3,y-r*0.3,0,x-r*0.26,y-r*0.26,r*0.4);
+      spec.addColorStop(0,colorSet.specular+Math.min(alpha*1.5,0.55).toFixed(2)+')');
+      spec.addColorStop(0.5,colorSet.specular+(alpha*0.25).toFixed(2)+')');
+      spec.addColorStop(1,colorSet.specular+'0)');
+      ctx.beginPath(); ctx.arc(x-r*0.26,y-r*0.26,r*0.4,0,Math.PI*2); ctx.fillStyle=spec; ctx.fill();
+      ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.strokeStyle=colorSet.base+(alpha*0.4)+')'; ctx.lineWidth=0.5; ctx.stroke();
     }
-
     function animate() {
-      ctx.clearRect(0, 0, W, H);
+      ctx.clearRect(0,0,W,H);
       for (const b of balls) {
         b.phase += b.phaseSpeed;
-        b.x += b.vx + Math.sin(b.phase) * 0.1;
-        b.y += b.vy + Math.cos(b.phase * 0.7) * 0.08;
-        if (b.x - b.r < 0)  { b.x = b.r;      b.vx = Math.abs(b.vx); }
-        if (b.x + b.r > W)  { b.x = W - b.r;  b.vx = -Math.abs(b.vx); }
-        if (b.y - b.r < 0)  { b.y = b.r;      b.vy = Math.abs(b.vy); }
-        if (b.y + b.r > H)  { b.y = H - b.r;  b.vy = -Math.abs(b.vy); }
+        b.x += b.vx + Math.sin(b.phase)*0.1;
+        b.y += b.vy + Math.cos(b.phase*0.7)*0.08;
+        if (b.x-b.r<0){b.x=b.r;b.vx=Math.abs(b.vx);}
+        if (b.x+b.r>W){b.x=W-b.r;b.vx=-Math.abs(b.vx);}
+        if (b.y-b.r<0){b.y=b.r;b.vy=Math.abs(b.vy);}
+        if (b.y+b.r>H){b.y=H-b.r;b.vy=-Math.abs(b.vy);}
         drawBall(b);
       }
       requestAnimationFrame(animate);
@@ -658,20 +585,16 @@
     animate();
   })();
 
-  /* ── Fade-in on scroll ── */
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  /* ── Scroll progress bar ── */
   const bar = document.getElementById('progress-bar');
   window.addEventListener('scroll', () => {
-    const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
-    bar.style.width = pct + '%';
+    bar.style.width = (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100) + '%';
   });
 
-  /* ── Active nav link ── */
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   const navObserver = new IntersectionObserver(entries => {
@@ -685,7 +608,6 @@
   }, { threshold: 0.4 });
   sections.forEach(s => navObserver.observe(s));
 
-  /* ── Typing animation ── */
   const bioEl = document.querySelector('.hero-bio');
   const cursor = document.querySelector('.typing-cursor');
   const bioText = bioEl.textContent;
@@ -693,15 +615,8 @@
   bioEl.style.minHeight = '3rem';
   let i = 0;
   function typeChar() {
-    if (i < bioText.length) {
-      bioEl.textContent += bioText[i++];
-      setTimeout(typeChar, 18);
-    } else {
-      cursor.style.transition = 'opacity 0.6s ease';
-      cursor.style.animation = 'none';
-      cursor.style.opacity = '1';
-      setTimeout(() => { cursor.style.opacity = '0'; }, 800);
-    }
+    if (i < bioText.length) { bioEl.textContent += bioText[i++]; setTimeout(typeChar, 18); }
+    else { cursor.style.animation = 'none'; cursor.style.opacity = '1'; setTimeout(() => { cursor.style.opacity = '0'; }, 800); }
   }
   setTimeout(typeChar, 600);
 </script>
