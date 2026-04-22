@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tulika Das</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -15,7 +15,6 @@
     }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; }
-
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: rgba(13,17,23,0.9); backdrop-filter: blur(14px);
@@ -26,18 +25,13 @@
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
     .nav-links a:hover { color: var(--text); }
-
     section { max-width: 760px; margin: 0 auto; padding: 5rem 2rem; }
-
     #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 80px; }
-
     #balls-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 0; }
-
     nav { z-index: 100; }
     section { position: relative; z-index: 1; }
     footer { position: relative; z-index: 1; }
     hr.divider { position: relative; z-index: 1; }
-
     .hero-content { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
     .hero-text { flex: 1; min-width: 280px; }
     .hero-photo { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(124,106,247,0.4); flex-shrink: 0; }
@@ -57,13 +51,10 @@
     .btn-icon-github:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
     .btn-icon-linkedin:hover { color: #0A66C2; border-color: rgba(10,102,194,0.5); }
     .btn-icon-medium:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
-
     .section-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-light); margin-bottom: 0.6rem; }
     h2 { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 2.25rem; }
-
     .about-text { color: var(--muted); line-height: 1.85; }
     .about-text p + p { margin-top: 1rem; }
-
     .exp-list { display: flex; flex-direction: column; gap: 1.5rem; }
     .exp-card { border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
     .exp-card-purple { background: rgba(124,106,247,0.05); border-color: rgba(124,106,247,0.2); border-left: 4px solid var(--accent); }
@@ -84,181 +75,36 @@
     .exp-bullets li { font-size: 0.84rem; color: var(--muted); line-height: 1.65; padding-left: 1rem; position: relative; }
     .exp-bullets li::before { content: "·"; position: absolute; left: 0; color: var(--accent-light); font-size: 1.2rem; line-height: 1.2; }
     .exp-card-teal .exp-bullets li::before { color: #5DCAA5; }
-
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-    /* =============================================
-       PROJECT CARDS — TWO COLUMN LAYOUT
-       ============================================= */
-    .projects-grid { display: flex; flex-direction: column; gap: 1.25rem; }
-
-    .project-card {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      overflow: hidden;
-      background: var(--surface);
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .project-card:hover { transform: translateY(-2px); }
-
-    .project-card.accent-purple { border-left: 4px solid var(--accent); border-color: rgba(124,106,247,0.25); background: rgba(124,106,247,0.03); }
-    .project-card.accent-teal   { border-left: 4px solid #1D9E75;  border-color: rgba(29,158,117,0.25);  background: rgba(29,158,117,0.03); }
-    .project-card.accent-coral  { border-left: 4px solid #D85A30;  border-color: rgba(216,90,48,0.25);   background: rgba(216,90,48,0.03); }
-    .project-card.accent-blue   { border-left: 4px solid #378ADD;  border-color: rgba(55,138,221,0.25);  background: rgba(55,138,221,0.03); }
-    .project-card.accent-amber  { border-left: 4px solid #BA7517;  border-color: rgba(186,117,23,0.25);  background: rgba(186,117,23,0.03); }
-
-    .project-card.accent-purple:hover { border-color: rgba(124,106,247,0.5); }
-    .project-card.accent-teal:hover   { border-color: rgba(29,158,117,0.5); }
-    .project-card.accent-coral:hover  { border-color: rgba(216,90,48,0.5); }
-    .project-card.accent-blue:hover   { border-color: rgba(55,138,221,0.5); }
-    .project-card.accent-amber:hover  { border-color: rgba(186,117,23,0.5); }
-
-    /* LEFT COLUMN */
-    .card-left {
-      display: flex;
-      flex-direction: column;
-      border-right: 1px solid var(--border);
-      background: rgba(255,255,255,0.02);
-      overflow: hidden;
-    }
-
-    .card-thumb {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-      flex-shrink: 0;
-      filter: brightness(0.9);
-    }
-
-    .card-name-area {
-      padding: 14px 16px 16px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .card-name {
-      font-weight: 600;
-      font-size: 0.875rem;
-      color: var(--text);
-      line-height: 1.45;
-      letter-spacing: -0.01em;
-    }
-
-    .card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
-
-    .tag-pill {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      padding: 2px 8px;
-      border-radius: 5px;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      white-space: nowrap;
-      letter-spacing: 0.02em;
-    }
-
-    /* RIGHT COLUMN */
-    .card-right {
-      padding: 20px 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .card-block-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 500;
-      margin-bottom: 3px;
-      display: block;
-    }
-
-    .label-purple { color: var(--accent-light); }
-    .label-teal   { color: #5DCAA5; }
-    .label-coral  { color: #F0997B; }
-    .label-blue   { color: #85B7EB; }
-    .label-amber  { color: #FAC775; }
-
-    .card-block-text {
-      font-size: 0.82rem;
-      color: var(--muted);
-      line-height: 1.65;
-      margin: 0;
-    }
-
-    .card-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0;
-    }
-
-    .result-block {
-      border-radius: 0 6px 6px 0;
-      padding: 9px 13px;
-    }
-
-    .result-purple { background: rgba(124,106,247,0.07); border-left: 3px solid var(--accent); }
-    .result-teal   { background: rgba(29,158,117,0.07);  border-left: 3px solid #1D9E75; }
-    .result-coral  { background: rgba(216,90,48,0.07);   border-left: 3px solid #D85A30; }
-    .result-blue   { background: rgba(55,138,221,0.07);  border-left: 3px solid #378ADD; }
-    .result-amber  { background: rgba(186,117,23,0.08);  border-left: 3px solid #BA7517; }
-
-    .card-actions {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: auto;
-      padding-top: 4px;
-    }
-
-    .card-btn {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.75rem;
-      font-weight: 500;
-      padding: 6px 14px;
-      border-radius: 7px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--muted);
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      transition: background 0.15s, border-color 0.15s, color 0.15s;
-      white-space: nowrap;
-    }
-    .card-btn:hover { border-color: #3a3a4a; color: var(--text); background: rgba(255,255,255,0.04); }
-
-    .card-btn-filled {
-      background: var(--accent);
-      color: #fff;
-      border-color: var(--accent);
-    }
-    .card-btn-filled:hover { background: var(--accent-light); border-color: var(--accent-light); color: #fff; }
-
-    /* Responsive: stack columns on mobile */
-    @media (max-width: 600px) {
-      .project-card { grid-template-columns: 1fr; }
-      .card-left { border-right: none; border-bottom: 1px solid var(--border); }
-      .card-thumb { height: 200px; }
-    }
-    /* ============================================= */
-
+    .projects-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+    .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; gap: 1rem; color: inherit; }
+    .project-card:hover { border-color: rgba(124,106,247,0.35); transform: translateY(-2px); }
+    .project-card-purple { background: rgba(124,106,247,0.04); border-color: rgba(124,106,247,0.2); border-left: 4px solid var(--accent); }
+    .project-card-teal { background: rgba(29,158,117,0.04); border-color: rgba(29,158,117,0.2); border-left: 4px solid #1D9E75; }
+    .project-card-coral { background: rgba(216,90,48,0.04); border-color: rgba(216,90,48,0.2); border-left: 4px solid #D85A30; }
+    .project-card-blue { background: rgba(55,138,221,0.04); border-color: rgba(55,138,221,0.2); border-left: 4px solid #378ADD; }
+    .project-card-amber { background: rgba(186,117,23,0.05); border-color: rgba(186,117,23,0.2); border-left: 4px solid #BA7517; }
+    .project-thumb { width: 100%; height: 220px; object-fit: cover; object-position: center top; border-radius: 8px; filter: brightness(0.92); flex-shrink: 0; display: block; }
+    .project-name { font-weight: 600; font-size: 0.9rem; color: var(--text); margin-bottom: 0.5rem; }
+    .project-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.75rem; flex-grow: 1; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .pill { font-size: 0.65rem; padding: 0.15rem 0.55rem; border-radius: 999px; background: rgba(124,106,247,0.07); color: var(--accent-light); border: 1px solid rgba(124,106,247,0.18); }
+    .project-result { display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.75rem; margin-bottom: 0.75rem; padding: 0.5rem 0.75rem; border-left: 3px solid; border-radius: 0 6px 6px 0; }
+    .project-result-label { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; flex-shrink: 0; }
+    .project-result-text { font-size: 0.78rem; color: var(--text); line-height: 1.5; }
+    .result-purple { background: rgba(124,106,247,0.07); border-color: var(--accent); }
+    .result-purple .project-result-label { color: var(--accent-light); }
+    .result-teal { background: rgba(29,158,117,0.07); border-color: #1D9E75; }
+    .result-teal .project-result-label { color: #5DCAA5; }
+    .result-blue { background: rgba(55,138,221,0.07); border-color: #378ADD; }
+    .result-blue .project-result-label { color: #85B7EB; }
+    .result-coral { background: rgba(216,90,48,0.07); border-color: #D85A30; }
+    .result-coral .project-result-label { color: #F0997B; }
+    .result-amber { background: rgba(186,117,23,0.08); border-color: #BA7517; }
+    .result-amber .project-result-label { color: #FAC775; }
+    .project-actions { display: flex; gap: 0.5rem; margin-top: auto; padding-top: 0.875rem; flex-wrap: wrap; }
+    .project-actions .btn { flex: 1; justify-content: center; font-size: 0.75rem; padding: 0.45rem 0.6rem; }
     .blog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: stretch; }
     .blog-card { border-radius: 12px; padding: 1.4rem; transition: border-color 0.2s, transform 0.2s; border: 1px solid var(--border); display: flex; flex-direction: column; height: 100%; }
     .blog-card:hover { transform: translateY(-2px); }
@@ -275,9 +121,7 @@
     .btn-teal { background: rgba(29,158,117,0.15); color: #5DCAA5; border: 1px solid rgba(29,158,117,0.3); }
     .btn-teal:hover { background: rgba(29,158,117,0.25); border-color: rgba(29,158,117,0.5); }
     @media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } }
-
     .achievement-card { background: rgba(124,106,247,0.06); border: 1px solid rgba(124,106,247,0.2); border-left: 4px solid var(--accent); border-radius: 12px; padding: 1.5rem; }
-
     .skills-tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; }
     .skills-tier-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.4rem; transition: border-color 0.2s; }
     .skills-tier-card:hover { border-color: rgba(124,106,247,0.25); }
@@ -295,7 +139,6 @@
     .chip-teal { background: rgba(29,158,117,0.08); color: #5DCAA5; border-color: rgba(29,158,117,0.2); }
     .chip-blue { background: rgba(55,138,221,0.08); color: #85B7EB; border-color: rgba(55,138,221,0.2); }
     .chip-gray { background: rgba(95,94,90,0.12); color: var(--muted); border-color: rgba(95,94,90,0.25); }
-
     .contact-top { margin-bottom: 1.5rem; }
     .contact-link { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.2rem; border-radius: 10px; text-decoration: none; transition: border-color 0.2s; border: 1px solid; border-left: 4px solid; }
     .contact-link-purple { background: rgba(124,106,247,0.05); border-color: rgba(124,106,247,0.2); border-left-color: var(--accent); }
@@ -310,16 +153,13 @@
     .form-group input, .form-group textarea { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 0.9rem; color: var(--text); font-size: 0.875rem; font-family: inherit; outline: none; resize: none; transition: border-color 0.2s; }
     .form-group input:focus, .form-group textarea:focus { border-color: rgba(124,106,247,0.5); }
     .form-group input::placeholder, .form-group textarea::placeholder { color: #444455; }
-
     #progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent-light)); width: 0%; z-index: 200; transition: width 0.1s linear; }
     .nav-links a.active { color: var(--text); }
     .typing-cursor { display: inline-block; width: 3px; height: 1em; background: var(--accent-light); margin-left: 2px; vertical-align: middle; animation: blink 0.8s step-end infinite; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-
     .divider { border: none; border-top: 1px solid var(--border); }
     footer { border-top: 1px solid var(--border); text-align: center; padding: 1.75rem 2rem; font-size: 0.78rem; color: var(--muted); }
     footer a { color: var(--muted); text-decoration: none; }
-
     @media (max-width: 600px) {
       nav { padding: 0 1.25rem; }
       .nav-links { gap: 1.25rem; }
@@ -330,9 +170,7 @@
   </style>
 </head>
 <body>
-
 <div id="progress-bar"></div>
-
 <nav>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
@@ -345,9 +183,7 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
-
 <canvas id="balls-canvas"></canvas>
-
 <!-- Hero -->
 <section id="hero">
   <div class="hero-content">
@@ -371,9 +207,7 @@
     <img src="https://avatars.githubusercontent.com/u/159255355?v=4" alt="Tulika Das" class="hero-photo">
   </div>
 </section>
-
 <hr class="divider">
-
 <!-- About -->
 <section id="about">
   <p class="section-label">About</p>
@@ -383,216 +217,100 @@
     <p>My recent work spans scalable LLM backends, memory-based systems, hybrid RAG systems, and AI safety tools. I care about building things that are not just technically interesting but genuinely useful.</p>
   </div>
 </section>
-
 <hr class="divider">
-
 <!-- Projects -->
 <section id="projects">
   <p class="section-label">Projects</p>
   <h2>Featured Projects</h2>
   <div class="projects-grid">
-
-    <!-- Card 1: Multi-Agent Complaint System -->
-    <div class="project-card accent-purple fade-in">
-      <div class="card-left">
-        <img src="assets/multiagent.png" alt="Multi-Agent Complaint System" class="card-thumb">
-        <div class="card-name-area">
-          <p class="card-name">Multi-Agent Complaint System</p>
-          <div class="card-tags">
-            <span class="tag-pill">LangGraph</span>
-            <span class="tag-pill">LLaMA-3</span>
-            <span class="tag-pill">Gemini</span>
-            <span class="tag-pill">HITL</span>
-            <span class="tag-pill">Python</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-right">
-        <div>
-          <span class="card-block-label label-purple">Problem</span>
-          <p class="card-block-text">Customer support teams struggle with high complaint volumes, mixing urgent issues with trivial queries and causing missed escalations.</p>
-        </div>
-        <hr class="card-divider">
-        <div>
-          <span class="card-block-label label-purple">Solution</span>
-          <p class="card-block-text">Built a multi-agent system using LangGraph, Llama-3, and Gemini that auto-routes complaints by urgency, loops in human managers for high-severity cases, and sends automated email resolutions.</p>
-        </div>
-        <hr class="card-divider">
-        <div class="result-block result-purple">
-          <span class="card-block-label label-purple">Result</span>
-          <p class="card-block-text">Urgent complaints are no longer buried in a queue — the system routes, escalates, and resolves without a human in the loop for every ticket.</p>
-        </div>
-        <div class="card-actions">
-          <a href="https://github.com/tulika105/Multi-Agent-Complaint-System" target="_blank" class="card-btn card-btn-filled">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-            Code
-          </a>
-          <a href="https://youtu.be/CYjLIDAvzF0" target="_blank" class="card-btn">▶ See it in Action</a>
-        </div>
+    <div class="project-card project-card-purple fade-in">
+      <img src="assets/multiagent.png" alt="Multi-Agent Complaint System" class="project-thumb">
+      <p class="project-name">Multi-Agent Complaint System</p>
+      <p class="project-desc">
+        <strong style="color:var(--text)">Problem:</strong> Customer support teams struggle with high complaint volumes, mixing urgent issues with trivial queries and causing missed escalations.<br><br>
+        <strong style="color:var(--text)">Solution:</strong> Built a multi-agent system using LangGraph, Llama-3, and Gemini that auto-routes complaints by urgency, loops in human managers for high-severity cases, and sends automated email resolutions.
+      </p>
+      <div class="project-result result-purple"><span class="project-result-label">Result</span><span class="project-result-text">Urgent complaints are no longer buried in a queue — the system routes, escalates, and resolves without a human in the loop for every ticket.</span></div>
+      <div class="project-tags"><span class="pill">LangGraph</span><span class="pill">LLaMA-3</span><span class="pill">Gemini</span><span class="pill">HITL</span><span class="pill">Python</span></div>
+      <div class="project-actions">
+        <a href="https://github.com/tulika105/Multi-Agent-Complaint-System" target="_blank" class="btn btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          Code
+        </a>
+        <a href="https://youtu.be/CYjLIDAvzF0" target="_blank" class="btn btn-primary">▶ See it in Action</a>
       </div>
     </div>
-
-    <!-- Card 2: Research Agent -->
-    <div class="project-card accent-teal fade-in">
-      <div class="card-left">
-        <img src="assets/ReActagent.png" alt="Research Agent" class="card-thumb">
-        <div class="card-name-area">
-          <p class="card-name">Autonomous Research Agent (ReAct-based)</p>
-          <div class="card-tags">
-            <span class="tag-pill">LangGraph</span>
-            <span class="tag-pill">Groq</span>
-            <span class="tag-pill">ReAct</span>
-            <span class="tag-pill">Python</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-right">
-        <div>
-          <span class="card-block-label label-teal">Problem</span>
-          <p class="card-block-text">Manual research is slow and fragmented. Searching multiple queries, reading articles, and synthesizing findings takes hours.</p>
-        </div>
-        <hr class="card-divider">
-        <div>
-          <span class="card-block-label label-teal">Solution</span>
-          <p class="card-block-text">Built a ReAct agent using LangGraph and Groq that autonomously searches DuckDuckGo across multiple angles and compiles findings into a structured 6-section research report.</p>
-        </div>
-        <hr class="card-divider">
-        <div class="result-block result-teal">
-          <span class="card-block-label label-teal">Result</span>
-          <p class="card-block-text">What used to take hours of reading and note-taking now produces a structured, multi-angle report from a single prompt.</p>
-        </div>
-        <div class="card-actions">
-          <a href="https://github.com/tulika105/Research-Agent" target="_blank" class="card-btn card-btn-filled">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-            Code
-          </a>
-          <a href="https://youtu.be/s4CEPywiakk" target="_blank" class="card-btn">▶ See it in Action</a>
-        </div>
+    <div class="project-card project-card-teal fade-in">
+      <img src="assets/ReActagent.png" alt="Research Agent" class="project-thumb">
+      <p class="project-name">Autonomous Research Agent (ReAct-based)</p>
+      <p class="project-desc">
+        <strong style="color:var(--text)">Problem:</strong> Manual research is slow and fragmented. Searching multiple queries, reading articles, and synthesizing findings takes hours.<br><br>
+        <strong style="color:var(--text)">Solution:</strong> Built a ReAct agent using LangGraph and Groq that autonomously searches DuckDuckGo across multiple angles and compiles findings into a structured 6-section research report.
+      </p>
+      <div class="project-result result-teal"><span class="project-result-label">Result</span><span class="project-result-text">What used to take hours of reading and note-taking now produces a structured, multi-angle report from a single prompt.</span></div>
+      <div class="project-tags"><span class="pill">LangGraph</span><span class="pill">Groq</span><span class="pill">ReAct</span><span class="pill">Python</span></div>
+      <div class="project-actions">
+        <a href="https://github.com/tulika105/Research-Agent" target="_blank" class="btn btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          Code
+        </a>
+        <a href="https://youtu.be/s4CEPywiakk" target="_blank" class="btn btn-primary">▶ See it in Action</a>
       </div>
     </div>
-
-    <!-- Card 3: SheGuard AI -->
-    <div class="project-card accent-coral fade-in">
-      <div class="card-left">
-        <img src="assets/sheguard.png" alt="SheGuard AI" class="card-thumb">
-        <div class="card-name-area">
-          <p class="card-name">SheGuard AI</p>
-          <div class="card-tags">
-            <span class="tag-pill">LLaMA</span>
-            <span class="tag-pill">LangChain</span>
-            <span class="tag-pill">Safety AI</span>
-            <span class="tag-pill">Python</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-right">
-        <div>
-          <span class="card-block-label label-coral">Problem</span>
-          <p class="card-block-text">Existing safety tools for women are reactive, alerting after danger occurs rather than providing proactive, situational guidance.</p>
-        </div>
-        <hr class="card-divider">
-        <div>
-          <span class="card-block-label label-coral">Solution</span>
-          <p class="card-block-text">Built an AI safety advisor using Llama-3.3-70b and LangChain with Chain-of-Thought reasoning that delivers age-specific safety tips, self-defense techniques, and relevant video resources.</p>
-        </div>
-        <hr class="card-divider">
-        <div class="result-block result-coral">
-          <span class="card-block-label label-coral">Result</span>
-          <p class="card-block-text">Rated 9–10/10 by real users across age groups from 7 to 30+, with feedback like "very helpful", "very informative", and "responses are presented in a structured way".</p>
-        </div>
-        <div class="card-actions">
-          <a href="https://github.com/tulika105/SheGuard-AI" target="_blank" class="card-btn card-btn-filled">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-            Code
-          </a>
-          <a href="https://huggingface.co/spaces/Tulika2000/SheGuard-AI" target="_blank" class="card-btn">▶ Live Action</a>
-        </div>
+    <div class="project-card project-card-coral fade-in">
+      <img src="assets/sheguard.png" alt="SheGuard AI" class="project-thumb">
+      <p class="project-name">SheGuard AI</p>
+      <p class="project-desc">
+        <strong style="color:var(--text)">Problem:</strong> Existing safety tools for women are reactive, alerting after danger occurs rather than providing proactive, situational guidance.<br><br>
+        <strong style="color:var(--text)">Solution:</strong> Built an AI safety advisor using Llama-3.3-70b and LangChain with Chain-of-Thought reasoning that delivers age-specific safety tips, self-defense techniques, and relevant video resources.
+      </p>
+      <div class="project-result result-coral"><span class="project-result-label">Result</span><span class="project-result-text">Rated 9–10/10 by real users across age groups from 7 to 30+, with feedback like "very helpful", "very informative", and "responses are presented in a structured way".</span></div>
+      <div class="project-tags"><span class="pill">LLaMA</span><span class="pill">Safety AI</span><span class="pill">Python</span></div>
+      <div class="project-actions">
+        <a href="https://github.com/tulika105/SheGuard-AI" target="_blank" class="btn btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          Code
+        </a>
+        <a href="https://huggingface.co/spaces/Tulika2000/SheGuard-AI" target="_blank" class="btn btn-primary">▶ Live Action</a>
       </div>
     </div>
-
-    <!-- Card 4: LLM Backend -->
-    <div class="project-card accent-blue fade-in">
-      <div class="card-left">
-        <img src="assets/LLM infrastructure.png" alt="LLM Backend System" class="card-thumb">
-        <div class="card-name-area">
-          <p class="card-name">Production-Ready LLM Backend System</p>
-          <div class="card-tags">
-            <span class="tag-pill">FastAPI</span>
-            <span class="tag-pill">LLM</span>
-            <span class="tag-pill">Python</span>
-            <span class="tag-pill">System Design</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-right">
-        <div>
-          <span class="card-block-label label-blue">Problem</span>
-          <p class="card-block-text">Deploying LLMs in production requires more than API calls — teams need rate limiting, cost control, auth, and fallback logic to run reliably at scale.</p>
-        </div>
-        <hr class="card-divider">
-        <div>
-          <span class="card-block-label label-blue">Solution</span>
-          <p class="card-block-text">Built a scalable LLM backend using FastAPI with authentication, per-user rate limiting, token cost accounting, and provider fallback logic.</p>
-        </div>
-        <hr class="card-divider">
-        <div class="result-block result-blue">
-          <span class="card-block-label label-blue">Result</span>
-          <p class="card-block-text">A backend that handles the unglamorous but critical parts of LLM deployment — so engineers can focus on building features instead of fighting infrastructure.</p>
-        </div>
-        <div class="card-actions">
-          <a href="https://github.com/tulika105/LLM-System-Design" target="_blank" class="card-btn card-btn-filled">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-            Code
-          </a>
-          <a href="https://youtu.be/2KCNXwQrQRI" target="_blank" class="card-btn">▶ See it in Action</a>
-        </div>
+    <div class="project-card project-card-blue fade-in">
+      <img src="assets/LLM infrastructure.png" alt="LLM System Design" class="project-thumb">
+      <p class="project-name">Production-Ready LLM Backend System</p>
+      <p class="project-desc">
+        <strong style="color:var(--text)">Problem:</strong> Deploying LLMs in production requires more than API calls, teams need rate limiting, cost control, auth, and fallback logic to run reliably at scale.<br><br>
+        <strong style="color:var(--text)">Solution:</strong> Built a scalable LLM backend using FastAPI with authentication, per-user rate limiting, token cost accounting, and provider fallback logic.
+      </p>
+      <div class="project-result result-blue"><span class="project-result-label">Result</span><span class="project-result-text">A backend that handles the unglamorous but critical parts of LLM deployment — so engineers can focus on building features instead of fighting infrastructure.</span></div>
+      <div class="project-tags"><span class="pill">FastAPI</span><span class="pill">LLM</span><span class="pill">Python</span><span class="pill">System Design</span></div>
+      <div class="project-actions">
+        <a href="https://github.com/tulika105/LLM-System-Design" target="_blank" class="btn btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          Code
+        </a>
+        <a href="https://youtu.be/2KCNXwQrQRI" target="_blank" class="btn btn-primary">▶ See it in Action</a>
       </div>
     </div>
-
-    <!-- Card 5: LangChain Memory System -->
-    <div class="project-card accent-amber fade-in">
-      <div class="card-left">
-        <img src="assets/memory systems.png" alt="LangChain Memory System" class="card-thumb">
-        <div class="card-name-area">
-          <p class="card-name">LangChain Memory System</p>
-          <div class="card-tags">
-            <span class="tag-pill">LangChain</span>
-            <span class="tag-pill">Memory</span>
-            <span class="tag-pill">GitHub Actions</span>
-            <span class="tag-pill">Python</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-right">
-        <div>
-          <span class="card-block-label label-amber">Problem</span>
-          <p class="card-block-text">Most LangChain tutorials treat memory as a black box, leaving developers confused about what actually persists and what gets lost between sessions.</p>
-        </div>
-        <hr class="card-divider">
-        <div>
-          <span class="card-block-label label-amber">Solution</span>
-          <p class="card-block-text">Built a focused system demonstrating both memory types: in-memory short-term context via LangChain and JSON-based long-term persistent storage, with daily reminders via GitHub Actions to log learnings.</p>
-        </div>
-        <hr class="card-divider">
-        <div class="result-block result-amber">
-          <span class="card-block-label label-amber">Result</span>
-          <p class="card-block-text">Memory in LangChain stops being a black box — both session context and persistent recall are fully observable and easy to reason about.</p>
-        </div>
-        <div class="card-actions">
-          <a href="https://github.com/tulika105/Memory-AI-Agent" target="_blank" class="card-btn card-btn-filled">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-            Code
-          </a>
-          <a href="https://youtu.be/9gIWfDSTpNQ" target="_blank" class="card-btn">▶ See it in Action</a>
-        </div>
+    <div class="project-card project-card-amber fade-in">
+      <img src="assets/memory systems.png" alt="LangChain Memory System" class="project-thumb">
+      <p class="project-name">LangChain Memory System</p>
+      <p class="project-desc">
+        <strong style="color:var(--text)">Problem:</strong> Most LangChain tutorials treat memory as a black box, leaving developers confused about what actually persists and what gets lost between sessions.<br><br>
+        <strong style="color:var(--text)">Solution:</strong> Built a focused system demonstrating both memory types: in-memory short-term context via LangChain and JSON-based long-term persistent storage, with daily reminders via GitHub Actions to log learnings.
+      </p>
+      <div class="project-result result-amber"><span class="project-result-label">Result</span><span class="project-result-text">Memory in LangChain stops being a black box — both session context and persistent recall are fully observable and easy to reason about.</span></div>
+      <div class="project-tags"><span class="pill">LangChain</span><span class="pill">Memory</span><span class="pill">GitHub Actions</span><span class="pill">Python</span></div>
+      <div class="project-actions">
+        <a href="https://github.com/tulika105/Memory-AI-Agent" target="_blank" class="btn btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          Code
+        </a>
+        <a href="https://youtu.be/9gIWfDSTpNQ" target="_blank" class="btn btn-primary">▶ See it in Action</a>
       </div>
     </div>
-
   </div>
 </section>
-
 <hr class="divider">
-
 <!-- Experience -->
 <section id="experience">
   <p class="section-label">Experience</p>
@@ -628,9 +346,7 @@
     </div>
   </div>
 </section>
-
 <hr class="divider">
-
 <!-- Achievements -->
 <section id="achievements">
   <p class="section-label">Recognition</p>
@@ -640,25 +356,18 @@
       <div style="display:flex; align-items:center; gap:0.75rem;">
         <span style="font-size:1.6rem; line-height:1;">🏆</span>
         <div>
-          <p class="exp-role" style="margin-bottom:0.15rem;">Distinguished Social Impact Innovation</p>
+          <p class="project-name" style="margin-bottom:0.15rem;">Distinguished Social Impact Innovation</p>
           <p style="font-size:0.78rem; color:var(--accent-light);">Agentic AI Innovation Challenge 2025 · Ready Tensor</p>
         </div>
       </div>
       <span class="exp-date">2025</span>
     </div>
-    <p style="font-size:0.84rem; color:var(--muted); line-height:1.65; margin-bottom:1rem;">Built SheGuard, an AI-powered personal safety advisor for women, using LLaMA 3.3-70b, LangChain, and deployed on Hugging Face Spaces. Ranked in the <strong style="color:var(--text)">top 38 out of 674 entries</strong> in the Distinguished Social Impact Innovation category.</p>
-    <div class="card-tags" style="margin-bottom:1rem;">
-      <span class="tag-pill">LLaMA</span>
-      <span class="tag-pill">LangChain</span>
-      <span class="tag-pill">Gradio</span>
-      <span class="tag-pill">Ready Tensor</span>
-    </div>
+    <p class="project-desc" style="margin-bottom:1rem;">Built SheGuard, an AI-powered personal safety advisor for women, using LLaMA 3.3-70b, LangChain, and deployed on Hugging Face Spaces. Ranked in the <strong style="color:var(--text)">top 38 out of 674 entries</strong> in the Distinguished Social Impact Innovation category.</p>
+    <div class="project-tags" style="margin-bottom:1rem;"><span class="pill">LLaMA</span><span class="pill">LangChain</span><span class="pill">Gradio</span><span class="pill">Ready Tensor</span></div>
     <a href="https://app.readytensor.ai/publications/sheguard-an-ai-powered-personal-safety-advisor-for-women-of-all-ages-nIHwyQJQ7bIR" target="_blank" class="btn btn-primary" style="font-size:0.78rem;">Read Publication</a>
   </div>
 </section>
-
 <hr class="divider">
-
 <!-- Skills -->
 <section id="skills">
   <p class="section-label">Skills</p>
@@ -690,9 +399,7 @@
     </div>
   </div>
 </section>
-
 <hr class="divider">
-
 <!-- Blog -->
 <section id="blog">
   <p class="section-label">Writing</p>
@@ -714,9 +421,7 @@
     </div>
   </div>
 </section>
-
 <hr class="divider">
-
 <!-- Education -->
 <section id="education">
   <p class="section-label">Education</p>
@@ -742,9 +447,7 @@
     </div>
   </div>
 </section>
-
 <hr class="divider">
-
 <!-- Contact -->
 <section id="contact">
   <p class="section-label">Contact</p>
@@ -776,11 +479,9 @@
     </form>
   </div>
 </section>
-
 <footer>
   <p>Built by <a href="https://github.com/tulika105">Tulika Das</a> · tulika105.github.io</p>
 </footer>
-
 <script>
   (function () {
     const canvas = document.getElementById('balls-canvas');
@@ -837,17 +538,14 @@
     }
     animate();
   })();
-
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
   const bar = document.getElementById('progress-bar');
   window.addEventListener('scroll', () => {
     bar.style.width = (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100) + '%';
   });
-
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   const navObserver = new IntersectionObserver(entries => {
@@ -860,7 +558,6 @@
     });
   }, { threshold: 0.4 });
   sections.forEach(s => navObserver.observe(s));
-
   const bioEl = document.querySelector('.hero-bio');
   const cursor = document.querySelector('.typing-cursor');
   const bioText = bioEl.textContent;
@@ -873,6 +570,10 @@
   }
   setTimeout(typeChar, 600);
 </script>
-
 </body>
 </html>
+
+
+
+
+
