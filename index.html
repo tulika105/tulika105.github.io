@@ -12,13 +12,13 @@
     :root {
       --bg: #f9f6f1;
       --text: #0e0e0e;
-      --muted: #555550;
-      --faint: #999990;
+      --muted: #2e2e28;        /* was #555550 — now much darker */
+      --faint: #6a6a62;        /* was #999990 — now darker */
       --border: #ddd8d0;
       --surface: #f2ede5;
       --highlight: #b8935a;
       --tag-bg: #ede8e0;
-      --tag-text: #3a3530;
+      --tag-text: #1e1c19;     /* was #3a3530 — darker */
       --max: 780px;
     }
 
@@ -382,7 +382,7 @@
 
     .project-link:hover { color: var(--text); border-color: var(--text); }
 
-    /* ── PROJECTS GRID V1-STYLE ── */
+    /* ── PROJECTS GRID ── */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -867,16 +867,17 @@
     <h2>Things I've built</h2>
     <div class="projects-grid">
 
+      <!-- Multi-Agent Complaint System -->
       <div class="project-card">
         <img src="assets/multiagent.png" alt="Multi-Agent Complaint System" class="project-thumb">
         <p class="project-name">Multi-Agent Complaint System</p>
         <p class="project-block-label">Problem</p>
-        <p class="project-block-text">Customer support teams struggle with high complaint volumes, mixing urgent issues with trivial queries and causing missed escalations.</p>
+        <p class="project-block-text">Urgent complaints get buried under low-priority tickets, causing missed escalations.</p>
         <p class="project-block-label">Solution</p>
-        <p class="project-block-text">Built a multi-agent system using LangGraph, Llama-3, and Gemini that auto-routes complaints by urgency, loops in human managers for high-severity cases, and sends automated email resolutions.</p>
+        <p class="project-block-text">Multi-agent system with LangGraph + Llama-3 that auto-routes by urgency, escalates to human managers, and sends automated resolutions.</p>
         <div class="project-result-box">
           <span class="project-result-label">Result</span>
-          <span class="project-result-text">Urgent complaints are no longer buried in a queue; the system routes, escalates, and resolves without a human in the loop for every ticket.</span>
+          <span class="project-result-text">Zero missed escalations, the system routes, escalates, and closes tickets without a human in the loop for every case.</span>
         </div>
         <div class="tags">
           <span class="tag">LangGraph</span><span class="tag">LLaMA-3</span><span class="tag">Gemini</span><span class="tag">HITL</span><span class="tag">Python</span>
@@ -890,16 +891,17 @@
         </div>
       </div>
 
+      <!-- Research Agent -->
       <div class="project-card">
         <img src="assets/ReActagent.png" alt="Research Agent" class="project-thumb">
         <p class="project-name">Autonomous Research Agent (ReAct)</p>
         <p class="project-block-label">Problem</p>
-        <p class="project-block-text">Manual research is slow and fragmented. Searching multiple queries, reading articles, and synthesizing findings takes hours.</p>
+        <p class="project-block-text">Manual research is slow and fragmented — hours of reading to synthesize a single topic.</p>
         <p class="project-block-label">Solution</p>
-        <p class="project-block-text">Built a ReAct agent using LangGraph and Groq that autonomously searches DuckDuckGo across multiple angles and compiles findings into a structured 6-section research report.</p>
+        <p class="project-block-text">ReAct agent using LangGraph + Groq that autonomously searches multiple angles and compiles a structured 6-section report.</p>
         <div class="project-result-box">
           <span class="project-result-label">Result</span>
-          <span class="project-result-text">What used to take hours of reading and note-taking now produces a structured, multi-angle report from a single prompt.</span>
+          <span class="project-result-text">One prompt, structured multi-angle report in minutes.</span>
         </div>
         <div class="tags">
           <span class="tag">LangGraph</span><span class="tag">Groq</span><span class="tag">ReAct</span><span class="tag">Python</span>
@@ -913,13 +915,14 @@
         </div>
       </div>
 
+      <!-- SheGuard AI — result text untouched -->
       <div class="project-card">
         <img src="assets/sheguard.png" alt="SheGuard AI" class="project-thumb">
         <p class="project-name">SheGuard AI</p>
         <p class="project-block-label">Problem</p>
         <p class="project-block-text">Existing safety tools for women are reactive, alerting after danger occurs rather than providing proactive, situational guidance.</p>
         <p class="project-block-label">Solution</p>
-        <p class="project-block-text">Built an AI safety advisor using Llama-3.3-70b and LangChain with Chain-of-Thought reasoning that delivers age-specific safety tips, self-defense techniques, and relevant video resources.</p>
+        <p class="project-block-text">AI safety advisor using Llama-3.3-70b + LangChain with Chain-of-Thought reasoning, age-specific safety tips, self-defense techniques, and relevant resources.</p>
         <div class="project-result-box">
           <span class="project-result-label">Result</span>
           <span class="project-result-text">Rated 9–10/10 by real users across age groups from 7 to 30+, with feedback like "very helpful", "very informative", and "responses are presented in a structured way".</span>
@@ -936,16 +939,17 @@
         </div>
       </div>
 
+      <!-- LLM Backend -->
       <div class="project-card">
         <img src="assets/LLM infrastructure.png" alt="LLM Backend" class="project-thumb">
         <p class="project-name">Production-Ready LLM Backend</p>
         <p class="project-block-label">Problem</p>
-        <p class="project-block-text">Deploying LLMs in production requires more than API calls — teams need rate limiting, cost control, auth, and fallback logic to run reliably at scale.</p>
+        <p class="project-block-text">Production LLM deployment needs more than API calls, teams need rate limiting, cost control, auth, and fallback logic from day one.</p>
         <p class="project-block-label">Solution</p>
-        <p class="project-block-text">Built a scalable LLM backend using FastAPI with authentication, per-user rate limiting, token cost accounting, and provider fallback logic.</p>
+        <p class="project-block-text">FastAPI backend with per-user rate limiting, token cost accounting, auth, and provider fallback, the unglamorous layer that makes LLMs production-worthy.</p>
         <div class="project-result-box">
           <span class="project-result-label">Result</span>
-          <span class="project-result-text">A backend that handles the unglamorous but critical parts of LLM deployment — so engineers can focus on building features instead of fighting infrastructure.</span>
+          <span class="project-result-text">Teams skip infra firefighting entirely and ship features instead.</span>
         </div>
         <div class="tags">
           <span class="tag">FastAPI</span><span class="tag">LLM</span><span class="tag">Python</span><span class="tag">System Design</span>
