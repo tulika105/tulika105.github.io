@@ -12,13 +12,13 @@
     :root {
       --bg: #f9f6f1;
       --text: #0e0e0e;
-      --muted: #2e2e28;        /* was #555550 — now much darker */
-      --faint: #6a6a62;        /* was #999990 — now darker */
+      --muted: #2e2e28;
+      --faint: #6a6a62;
       --border: #ddd8d0;
       --surface: #f2ede5;
       --highlight: #b8935a;
       --tag-bg: #ede8e0;
-      --tag-text: #1e1c19;     /* was #3a3530 — darker */
+      --tag-text: #1e1c19;
       --max: 780px;
     }
 
@@ -32,7 +32,6 @@
       line-height: 1.7;
     }
 
-    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -81,7 +80,6 @@
     .nav-links a:hover,
     .nav-links a.active { color: var(--text); }
 
-    /* ── SCROLL PROGRESS ── */
     #progress {
       position: fixed;
       top: 52px; left: 0;
@@ -92,14 +90,12 @@
       transition: width 0.08s linear;
     }
 
-    /* ── WRAPPER ── */
     .wrapper {
       max-width: var(--max);
       margin: 0 auto;
       padding: 0 2rem;
     }
 
-    /* ── HERO ── */
     #hero {
       padding-top: 120px;
       padding-bottom: 80px;
@@ -201,7 +197,6 @@
       flex-shrink: 0;
     }
 
-    /* ── SECTIONS ── */
     section {
       padding: 72px 0;
       border-bottom: 1px solid var(--border);
@@ -227,7 +222,6 @@
       line-height: 1.2;
     }
 
-    /* ── ABOUT ── */
     .about-text p {
       font-size: 0.93rem;
       color: var(--muted);
@@ -236,7 +230,6 @@
 
     .about-text p + p { margin-top: 0.9rem; }
 
-    /* ── EXPERIENCE / EDUCATION rows ── */
     .timeline { display: flex; flex-direction: column; gap: 0; }
 
     .timeline-item {
@@ -299,7 +292,6 @@
       line-height: 1.3;
     }
 
-    /* ── PROJECTS ── */
     .projects-list { display: flex; flex-direction: column; }
 
     .project-item {
@@ -382,7 +374,6 @@
 
     .project-link:hover { color: var(--text); border-color: var(--text); }
 
-    /* ── PROJECTS GRID ── */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -484,7 +475,6 @@
 
     @media (max-width: 680px) { .projects-grid { grid-template-columns: 1fr; } }
 
-    /* ── ACHIEVEMENT ── */
     .achievement-block {
       padding: 1.75rem;
       background: var(--surface);
@@ -530,7 +520,6 @@
 
     .inline-link:hover { color: var(--text); border-color: var(--text); }
 
-    /* ── SKILLS ── */
     .skills-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -569,7 +558,6 @@
       border-color: var(--text);
     }
 
-    /* ── BLOG ── */
     .blog-list { display: flex; flex-direction: column; }
 
     .blog-item {
@@ -631,7 +619,6 @@
 
     .blog-read-link:hover { color: var(--text); border-color: var(--text); }
 
-    /* ── CONTACT ── */
     .contact-wrap { display: flex; flex-direction: column; gap: 1.5rem; }
 
     .contact-email-link {
@@ -725,7 +712,6 @@
 
     .btn-send:hover { opacity: 0.72; }
 
-    /* ── FOOTER ── */
     footer {
       text-align: center;
       padding: 2rem;
@@ -737,7 +723,6 @@
     footer a { color: var(--faint); text-decoration: none; }
     footer a:hover { color: var(--text); }
 
-    /* ── FADE IN ── */
     .fade-in {
       opacity: 0;
       transform: translateY(18px);
@@ -749,7 +734,6 @@
       transform: translateY(0);
     }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 680px) {
       .hero-grid { grid-template-columns: 1fr; }
       .hero-photo { width: 140px; height: 140px; justify-self: start; order: -1; }
@@ -768,7 +752,6 @@
 
 <div id="progress"></div>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <ul class="nav-links">
@@ -783,7 +766,6 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="wrapper">
     <div class="hero-grid">
@@ -811,7 +793,6 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="wrapper fade-in">
     <p class="section-eyebrow">About</p>
@@ -823,7 +804,6 @@
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience">
   <div class="wrapper fade-in">
     <p class="section-eyebrow">Experience</p>
@@ -860,14 +840,12 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="wrapper fade-in">
     <p class="section-eyebrow">Projects</p>
     <h2>Things I've built</h2>
     <div class="projects-grid">
 
-      <!-- Multi-Agent Complaint System -->
       <div class="project-card">
         <img src="assets/multiagent.png" alt="Multi-Agent Complaint System" class="project-thumb">
         <p class="project-name">Multi-Agent Complaint System</p>
@@ -891,7 +869,6 @@
         </div>
       </div>
 
-      <!-- Research Agent -->
       <div class="project-card">
         <img src="assets/ReActagent.png" alt="Research Agent" class="project-thumb">
         <p class="project-name">Autonomous Research Agent (ReAct)</p>
@@ -915,7 +892,6 @@
         </div>
       </div>
 
-      <!-- SheGuard AI — result text untouched -->
       <div class="project-card">
         <img src="assets/sheguard.png" alt="SheGuard AI" class="project-thumb">
         <p class="project-name">SheGuard AI</p>
@@ -939,7 +915,6 @@
         </div>
       </div>
 
-      <!-- LLM Backend -->
       <div class="project-card">
         <img src="assets/LLM infrastructure.png" alt="LLM Backend" class="project-thumb">
         <p class="project-name">Production-Ready LLM Backend</p>
@@ -967,7 +942,6 @@
   </div>
 </section>
 
-<!-- ACHIEVEMENTS -->
 <section id="achievements">
   <div class="wrapper fade-in">
     <p class="section-eyebrow">Recognition</p>
@@ -987,7 +961,6 @@
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="wrapper fade-in">
     <p class="section-eyebrow">Skills</p>
@@ -1044,7 +1017,6 @@
   </div>
 </section>
 
-<!-- BLOG -->
 <section id="blog">
   <div class="wrapper fade-in">
     <p class="section-eyebrow">Blog</p>
@@ -1058,10 +1030,16 @@
           <p class="blog-excerpt">Built a RAG system, ran a few queries, called it done. Turns out that was just expensive vibe checking. Here's what RAGAS revealed about silent failures in retrieval and generation.</p>
           <p class="blog-meta">5 min read · Medium</p>
         </div>
-        <a href="https://medium.com/@tulika.das105/my-rag-pipeline-looked-fine-until-i-measured-it-8631a28a9f68" target="_blank" class="blog-read-link">
-          Read
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;align-items:flex-end;flex-shrink:0;">
+          <a href="https://medium.com/@tulika.das105/my-rag-pipeline-looked-fine-until-i-measured-it-8631a28a9f68" target="_blank" class="blog-read-link">
+            Read
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <a href="https://github.com/tulika105/Evaluating-RAG-with-RAGAS" target="_blank" class="blog-read-link">
+            Code
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+        </div>
       </div>
 
       <div class="blog-item">
@@ -1081,7 +1059,6 @@
   </div>
 </section>
 
-<!-- EDUCATION -->
 <section id="education">
   <div class="wrapper fade-in">
     <p class="section-eyebrow">Education</p>
@@ -1108,7 +1085,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="wrapper fade-in">
     <p class="section-eyebrow">Contact</p>
@@ -1147,13 +1123,11 @@
 </footer>
 
 <script>
-  // Scroll progress
   const bar = document.getElementById('progress');
   window.addEventListener('scroll', () => {
     bar.style.width = (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100) + '%';
   });
 
-  // Active nav on scroll
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -1169,7 +1143,6 @@
 
   sections.forEach(s => navObserver.observe(s));
 
-  // Fade in on scroll
   const fadeObserver = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); fadeObserver.unobserve(e.target); }
