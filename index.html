@@ -142,9 +142,40 @@
       color: var(--muted);
       line-height: 1.8;
       max-width: 480px;
-      margin-bottom: 1.75rem;
+      margin-bottom: 0.9rem;
       border-left: 2px solid var(--highlight);
       padding-left: 0.85rem;
+    }
+
+    .hero-open {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #2d6a4f;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #d8f3dc;
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      width: fit-content;
+    }
+
+    .hero-open::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #2d6a4f;
+      flex-shrink: 0;
+      animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
     }
 
     .hero-actions {
@@ -772,6 +803,7 @@
       <div class="hero-text">
         <h1>Tulika Das</h1>
         <p class="hero-bio">I build agentic AI systems that reason, act, and deliver — from multi-agent pipelines to RAG-powered solutions.</p>
+        <p class="hero-open">Open to AI Engineer roles</p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">View Projects →</a>
           <a href="https://github.com/tulika105" target="_blank" class="btn btn-ghost btn-icon" aria-label="GitHub">
