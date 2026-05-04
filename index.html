@@ -768,8 +768,22 @@
     @media (max-width: 680px) {
       .hero-grid { grid-template-columns: 1fr; }
       .hero-photo { width: 140px; height: 140px; justify-self: start; order: -1; }
-      .nav-links { gap: 1rem; }
-      .nav-links li:nth-child(n+5) { display: none; }
+
+      /* Fix: make nav scrollable instead of hiding links */
+      .nav-inner {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        justify-content: flex-start;
+        padding: 0 1rem;
+      }
+      .nav-inner::-webkit-scrollbar { display: none; }
+      .nav-links {
+        gap: 1.25rem;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+      }
+
       .timeline-item { grid-template-columns: 1fr; gap: 0.3rem; }
       .project-item { grid-template-columns: 1fr; }
       .project-links { flex-direction: row; align-items: flex-start; }
