@@ -506,6 +506,13 @@
 
     @media (max-width: 680px) { .projects-grid { grid-template-columns: 1fr; } }
 
+    /* achievements list wrapper for spacing between blocks */
+    .achievements-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
     .achievement-block {
       padding: 1.75rem;
       background: var(--surface);
@@ -550,6 +557,12 @@
     }
 
     .inline-link:hover { color: var(--text); border-color: var(--text); }
+
+    .achievement-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
 
     .skills-grid {
       display: grid;
@@ -769,7 +782,6 @@
       .hero-grid { grid-template-columns: 1fr; }
       .hero-photo { width: 140px; height: 140px; justify-self: start; order: -1; }
 
-      /* Fix: make nav scrollable instead of hiding links */
       .nav-inner {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -992,17 +1004,40 @@
   <div class="wrapper fade-in">
     <p class="section-eyebrow">Recognition</p>
     <h2>Achievements</h2>
-    <div class="achievement-block">
-      <p class="achievement-title">🏆 Distinguished Social Impact Innovation</p>
-      <p class="achievement-sub">Agentic AI Innovation Challenge 2025 · Ready Tensor</p>
-      <p class="achievement-desc">Built SheGuard, an AI-powered personal safety advisor for women, using LLaMA 3.3-70b, LangChain, and deployed on Hugging Face Spaces. Ranked in the <strong>top 38 out of 671 entries</strong> in the Distinguished Social Impact Innovation category.</p>
-      <div class="tags" style="margin-bottom: 1rem;">
-        <span class="tag">LLaMA</span><span class="tag">LangChain</span><span class="tag">Gradio</span><span class="tag">Ready Tensor</span>
+    <div class="achievements-list">
+
+      <div class="achievement-block">
+        <p class="achievement-title">🏆 Distinguished Social Impact Innovation</p>
+        <p class="achievement-sub">Agentic AI Innovation Challenge 2025 · Ready Tensor</p>
+        <p class="achievement-desc">Built SheGuard, an AI-powered personal safety advisor for women, using LLaMA 3.3-70b, LangChain, and deployed on Hugging Face Spaces. Ranked in the <strong>top 38 out of 671 entries</strong> in the Distinguished Social Impact Innovation category.</p>
+        <div class="tags" style="margin-bottom: 1rem;">
+          <span class="tag">LLaMA</span><span class="tag">LangChain</span><span class="tag">Gradio</span><span class="tag">Ready Tensor</span>
+        </div>
+        <a href="https://app.readytensor.ai/publications/sheguard-an-ai-powered-personal-safety-advisor-for-women-of-all-ages-nIHwyQJQ7bIR" target="_blank" class="inline-link">
+          Read Publication
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
       </div>
-      <a href="https://app.readytensor.ai/publications/sheguard-an-ai-powered-personal-safety-advisor-for-women-of-all-ages-nIHwyQJQ7bIR" target="_blank" class="inline-link">
-        Read Publication
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-      </a>
+
+      <div class="achievement-block">
+        <p class="achievement-title">🥇 HackerRank Orchestrate Hackathon</p>
+        <p class="achievement-sub">24-Hour Hackathon · HackerRank</p>
+        <p class="achievement-desc">Built a hybrid RAG support triage agent — support docs chunked at paragraph level, dual-indexed with FAISS and TF-IDF, fused via Reciprocal Rank Fusion, and filtered by company metadata so the LLM only sees relevant context. Output is structured JSON with automatic escalation for high-risk tickets, and the system checkpoints after every ticket so nothing is lost mid-run. <strong>Ranked 529 out of 1,349 participants.</strong></p>
+        <div class="tags" style="margin-bottom: 1rem;">
+          <span class="tag">RAG</span><span class="tag">FAISS</span><span class="tag">TF-IDF</span><span class="tag">RRF</span><span class="tag">Python</span>
+        </div>
+        <div class="achievement-links">
+          <a href="https://github.com/tulika105/HackerRank-Orchestrate-Hackathon" target="_blank" class="inline-link">
+            Source Code
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="https://www.hackerrank.com/contests/hackerrank-orchestrate-may26/challenges/support-agent/leaderboard?username=tulika_das_tech" target="_blank" class="inline-link">
+            Leaderboard
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
